@@ -65,9 +65,7 @@ article[data-state="flip"] h3 {
 
 /* Media queries para adaptabilidad */
 @media (max-width: 600px) {
-    main section {
-        grid-template-columns: repeat(3, 1fr);
-    }
+    
     article {
         width: 80px;
         height: 80px;
@@ -78,9 +76,7 @@ article[data-state="flip"] h3 {
 }
 
 @media (max-width: 400px) {
-    main section {
-        grid-template-columns: repeat(2, 1fr);
-    }
+    
     article {
         width: 60px;
         height: 60px;
