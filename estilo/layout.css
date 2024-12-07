@@ -1,0 +1,45 @@
+/* Flexbox aplicado al encabezado */
+header {
+    display: flex; /* Activa el esquema Flexbox */
+    justify-content: space-between; /* Separa el título y la navegación */
+    align-items: center; /* Alinea verticalmente el contenido */
+    padding: 10px; /* Espaciado interno */
+  }
+  
+  /* Estilos para el título dentro del encabezado */
+  header h1 {
+    font-size: 1.5em; /* Tamaño del título */
+    margin: 0; /* Elimina el margen por defecto */
+  }
+@media (max-width: 465px) {
+  /* Especificidad: 002 */
+  header + p {
+    display: none; 
+  }
+} 
+  
+  header nav ul li a {
+    color: white; /* Color de los enlaces */
+    text-decoration: none; /* Elimina el subrayado */
+    font-size: 1em;
+  }
+  
+  /* Adaptación a pantallas pequeñas */
+  @media (max-width: 799px) {
+    header {
+      flex-direction: column; /* Cambia la disposición a vertical */
+      padding: 10px; /* Reducir el padding */
+    }
+  
+    
+  }
+
+
+
+main nav a{
+  display: inline-block;
+  margin-bottom: 10px; /* Espacio entre los enlaces */
+  padding: 10px 20px; /* Relleno dentro del botón */
+  
+}
+  

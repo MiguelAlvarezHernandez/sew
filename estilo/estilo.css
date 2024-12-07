@@ -1,0 +1,264 @@
+/* datos personales Miguel Álvare Hernández UO295368*/
+/*Especificidad: 001*/
+body {
+    font-family: Tahoma, sans-serif;
+    font-size: 1rem; 
+    line-height: 1.6;
+    color: #080808;
+    background-color: #fff;
+    }
+/* Especificidad: 001 */
+header {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #0000ff; /* Color de fondo del header */
+}
+/* Especificidad: 002 */
+header + p {
+    font-size: 0.875rem;
+    font-style: italic;
+    color: #666;
+  }
+
+
+/*Especificidad: 001*/
+h1 {
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    padding: 2em; 
+    /*Backgroung-color heredado de body*/
+    }
+/*Especificidad: 001*/
+h2 {
+    font-size: 2rem;
+    color: #0000ff; 
+    /*Backgroung-color heredado de body*/   
+    }
+/*Especificidad: 001*/
+h3 {
+    font-size: 1.5rem;
+    color: #0000ff; 
+    /*Backgroung-color heredado de body*/   
+    }
+/*Especificidad: 001*/
+h4 {
+    font-size: 1.25rem;
+    color: #0000ff;   
+    /*Backgroung-color heredado de body*/ 
+    }
+/* Especificidad: 001 */
+nav {
+    color: #ffffff; /* Color del texto del nav */
+    background-color: #0000ff; /* Fondo de la barra de navegación */
+}
+
+/* Especificidad: 002 */
+nav a{
+    color: #ffffff; /* Color del texto del nav */
+    background-color: #0000ff; /* Fondo de la barra de navegación */
+    text-decoration: none;
+}
+
+/* Especificidad: 002 */
+main nav {
+  color: #080808;
+  background-color: #fff;
+}
+/* Especificidad: 003 */
+main nav a {
+  color: #000; /* Color del texto */
+  background-color: #fff; /* Color de fondo */
+  border: 2px solid #080808; /* Borde del botón */
+  border-radius: 5px; /* Bordes redondeados */
+  text-decoration: none; /* Quitar subrayado */
+  transition: background-color 0.3s; /* Transición suave para el hover */
+}
+
+
+/*Especificidad 012*/
+nav a.active {
+  color: #f10d0d; /* Color distintivo para el enlace activo */
+  font-weight: bold; /* Hace el texto más grueso */
+  text-decoration: underline; /* Agrega subrayado para destacar */
+}
+
+/* Especificidad: 011 */
+a[href^="http"] {
+    color: #007BFF; /* Color azul para no visitados */
+  text-decoration: none; /* Mantener sin subrayado */
+}
+
+  
+  /* Efecto cuando el enlace no ha sido visitado */
+/* Especificidad: 021 */
+a[href^="http"]:link {
+    color: #007BFF; /* Color azul para no visitados */
+    text-decoration: none; /* Mantener sin subrayado */
+}
+  
+  /* Efecto cuando el enlace ha sido visitado */
+/* Especificidad: 021 */
+a[href^="http"]:visited {
+    color: #5A5A5A; /* Color gris para visitados */
+    text-decoration: none; /* Mantener sin subrayado */
+}
+  
+  /* Efecto al pasar el ratón sobre el enlace */
+/* Especificidad: 021 */
+a[href^="http"]:hover {
+    color: #FF5733; /* Cambia a color naranja al pasar el ratón */
+    text-decoration: none; /* Mantener sin subrayado en hover */
+    transition: color 0.3s ease; /* Efecto de transición suave */
+}
+  
+  /* Efecto cuando el enlace está siendo clicado */
+/* Especificidad: 021 */
+a[href^="http"]:active {
+    color: #C70039; /* Color rojo cuando el enlace está activo */
+    text-decoration: none; /* Mantener sin subrayado en active */
+}
+
+/* Especificidad: 001 */
+ul {
+    list-style-type: circle; /* Cambia la viñeta a un cuadrado */
+    padding-left: 20px; /* Añade espacio entre la viñeta y el contenido */
+    font-size: 1.2em; /* Ajusta el tamaño de la fuente */
+    color: #333; /* Color de texto para los elementos de la lista */
+  }
+  
+  /* Listas ordenadas */
+/* Especificidad: 001 */
+ol {
+    list-style-type: decimal; 
+    padding-left: 20px; /* Espaciado entre números y el contenido */
+    font-size: 1.2em; /* Ajusta el tamaño de la fuente */
+    color: #333; /* Color de texto para los elementos de la lista */
+}
+  
+  /* Listas anidadas dentro de una lista no ordenada */
+/* Especificidad: 002 */
+ul ul {
+    list-style-type: circle; /* Cambia la viñeta a un círculo */
+    padding-left: 30px; /* Añade más espacio para la lista anidada */
+    font-size: 1em; /* Tamaño de fuente ligeramente más pequeño */
+    color: #666; /* Cambia el color del texto de la lista anidada */
+}
+  
+  /* Listas anidadas dentro de una lista ordenada */
+/* Especificidad: 002 */
+ol ol {
+    list-style-type: lower-alpha; /* Utiliza letras minúsculas para la lista anidada */
+    padding-left: 30px; /* Espaciado para listas anidadas */
+    font-size: 1em; /* Tamaño de fuente ligeramente más pequeño */
+    color: #666; /* Cambia el color del texto de la lista anidada */
+}
+  
+  /* Estilo para los elementos de lista no ordenada cuando se pasa el ratón */
+/* Especificidad: 012 */
+ul li:hover {
+    color: #064d63; /* Cambia el color al pasar el ratón */
+    font-weight: bold; /* Aplica negrita al elemento */
+}
+  
+  /* Estilo para los elementos de lista ordenada cuando se pasa el ratón */
+/* Especificidad: 012 */
+ol li:hover {
+    color: #064d63; /* Cambia el color al pasar el ratón */
+    font-weight: bold; /* Aplica negrita al elemento */
+}
+  
+
+/* Especificidad: 001 */
+dl {
+    margin: 20px 0; /* Margen alrededor de la lista de definición */
+    padding: 10px;
+    background-color: #f9f9f9; /* Fondo claro para la lista */
+    border-left: 4px solid #007bff; /* Línea vertical que resalta la lista */
+}
+  
+  /* Término a definir (dt) */
+/* Especificidad: 001 */
+dt {
+    font-weight: bold; /* Resalta el término con negrita */
+    font-size: 1.2em; /* Aumenta ligeramente el tamaño del texto */
+    color: #007bff; /* Cambia el color del término para destacarlo */
+    margin-bottom: 5px; /* Añade espacio debajo del término */
+    text-transform: uppercase; /* Convierte el texto en mayúsculas */
+}
+  
+  /* Descripción del término (dd) */
+/* Especificidad: 001 */
+dd {
+    margin-left: 20px; /* Indentación para diferenciar el término de su definición */
+    font-size: 1em; /* Tamaño de texto estándar */
+    color: #333; /* Color del texto de la descripción */
+    background-color: #e9ecef; /* Fondo claro para la definición */
+    padding: 10px; /* Espacio interno para la definición */
+    border-radius: 5px; /* Bordes redondeados para la definición */
+    line-height: 1.5; /* Espaciado entre líneas */
+}
+  
+  /* Efecto hover en el término (dt) */
+/* Especificidad: 011 */
+dt:hover {
+    color: #0056b3; /* Cambia el color del término al pasar el ratón */
+    cursor: pointer; /* Cambia el cursor para indicar interactividad */
+}
+  
+  /* Efecto hover en la descripción (dd) */
+/* Especificidad: 011 */
+dd:hover {
+    background-color: #d6d8db; /* Cambia el color de fondo al pasar el ratón */
+}
+  
+
+/* Estilo base de la tabla */
+table {
+    width: 100%; /* Asegura que la tabla ocupe todo el ancho del contenedor */
+    border-collapse: collapse; /* Quita los espacios entre las celdas */
+    margin: 20px 0; /* Margen superior e inferior para la tabla */
+    font-size: 1em; /* Tamaño de fuente estándar */
+    text-align: left; /* Alinea el texto de las celdas a la izquierda */
+  }
+  
+  /* Estilo para las celdas del encabezado (th) */
+  th {
+    background-color: #007bff; /* Color de fondo para los encabezados */
+    color: white; /* Texto blanco para los encabezados */
+    padding: 10px; /* Relleno interno para mayor legibilidad */
+    border-bottom: 2px solid #0056b3; /* Borde inferior para destacar las columnas */
+  }
+  
+  /* Estilo para las celdas de datos (td) */
+  td {
+    padding: 10px; /* Espacio interno en las celdas de datos */
+    border-bottom: 1px solid #ddd; /* Borde inferior ligero entre las filas */
+    color: #333; /* Color del texto */
+  }
+  
+  /* Efecto hover para las filas */
+  tr:hover {
+    background-color: #f1f1f1; /* Cambia el fondo de la fila al pasar el ratón */
+  }
+
+  
+
+  /* Para hacer los videos adaptables */
+video {
+    width: 100%; /* El video ocupará el 100% del contenedor */
+    height: auto; /* Mantiene la proporción del video */
+    max-width: 100%; /* No se expandirá más allá de su contenedor */
+    display: block; /* Elimina el espacio extra debajo del video en algunos navegadores */
+    margin: 0 auto; /* Centra el video */
+  }
+  
+  /* Para hacer las imágenes adaptables */
+img {
+    width: 100%; /* La imagen ocupará el 100% del contenedor */
+    height: auto; /* Mantiene la proporción de la imagen */
+    max-width: 100%; /* Evita que la imagen se expanda fuera de su contenedor */
+    display: block; /* Elimina el espacio extra debajo de la imagen */
+    margin: 0 auto; /* Centra la imagen */
+}
+  

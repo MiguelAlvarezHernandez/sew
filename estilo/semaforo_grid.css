@@ -1,0 +1,86 @@
+main {
+    display: grid;
+    grid-template-rows: auto 1fr auto auto;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    width: 80%;
+    max-width: 600px;
+}
+
+h2 {
+    grid-column: span 4;
+    text-align: center;
+}
+
+section {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    grid-column: span 4;
+}
+
+@keyframes encenderLuz {
+    from {
+        background-color: #0007;
+    }
+    to {
+        background-color: red;
+    }
+}
+
+@keyframes out {
+    from {
+        background-color: red;
+    }
+    to {
+        background-color: #0007;
+    }
+}
+
+main.unload .light {
+    animation: out 0.1s forwards;
+}
+
+.light {
+    background-color: #0007;
+    border: 2px solid #000;
+    border-radius: 50%;
+    aspect-ratio: 1;
+    opacity: 0.3;
+    transition: opacity 0.5s;
+}
+
+main.load .light:nth-child(1) {
+    animation: encenderLuz 0.5s forwards;
+    animation-delay: 0.5s;
+}
+
+main.load .light:nth-child(2) {
+    animation: encenderLuz 0.5s forwards;
+    animation-delay: 1s;
+}
+
+main.load .light:nth-child(3) {
+    animation: encenderLuz 0.5s forwards;
+    animation-delay: 1.5s;
+}
+
+main.load .light:nth-child(4) {
+    animation: encenderLuz 0.5s forwards;
+    animation-delay: 2s;
+}
+
+button {
+    grid-column: span 2;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+main button:nth-of-type(1) {
+    justify-self: end;
+}
+
+main button:nth-of-type(2) {
+    justify-self: start;
+}
