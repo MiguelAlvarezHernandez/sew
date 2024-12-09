@@ -12,6 +12,9 @@ header {
   header + p {
     display: none; 
   }
+    html {
+      font-size: 8px;
+  }
 } 
   
   header nav ul li a {
@@ -26,7 +29,9 @@ header {
       flex-direction: column; /* Cambia la disposición a vertical */
       padding: 10px; /* Reducir el padding */
     }
-  
+  html {
+      font-size: 12px;
+  }
     
   }
 
