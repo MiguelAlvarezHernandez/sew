@@ -16,7 +16,7 @@ header {
 }
 /* Especificidad: 002 */
 header + p {
-    font-size: 0.875rem;
+    font-size: 0.875em;
     font-style: italic;
     color: #666;
   }
@@ -32,19 +32,19 @@ h1 {
     }
 /*Especificidad: 001*/
 h2 {
-    font-size: 2rem;
+    font-size: 2em;
     color: #0000ff; 
     /*Backgroung-color heredado de body*/   
     }
 /*Especificidad: 001*/
 h3 {
-    font-size: 1.5rem;
+    font-size: 1.5em;
     color: #0000ff; 
     /*Backgroung-color heredado de body*/   
     }
 /*Especificidad: 001*/
 h4 {
-    font-size: 1.25rem;
+    font-size: 1.25em;
     color: #0000ff;   
     /*Backgroung-color heredado de body*/ 
     }
@@ -56,6 +56,7 @@ nav {
 
 /* Especificidad: 002 */
 nav a{
+    font-size: 0.75em;
     color: #ffffff; /* Color del texto del nav */
     background-color: #0000ff; /* Fondo de la barra de navegación */
     text-decoration: none;
