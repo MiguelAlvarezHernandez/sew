@@ -24,9 +24,10 @@ header + p {
 
 /*Especificidad: 001*/
 h1 {
-    font-size: 2.5rem;
+    font-size: 0.75em;
     text-transform: uppercase;
     padding: 2em; 
+    margin:0;
     /*Backgroung-color heredado de body*/
     }
 /*Especificidad: 001*/
