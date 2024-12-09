@@ -2,14 +2,14 @@
 /*Especificidad: 001*/
 body {
     font-family: Tahoma, sans-serif;
-    font-size: 1rem; 
+    font-size: 1em; 
     line-height: 1.6;
     color: #080808;
     background-color: #fff;
     }
 /* Especificidad: 001 */
 header {
-    font-size: 2rem;
+    font-size: 2em;
     font-weight: bold;
     color: #ffffff;
     background-color: #0000ff; /* Color de fondo del header */
