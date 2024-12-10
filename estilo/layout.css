@@ -3,7 +3,7 @@ header {
     display: flex; /* Activa el esquema Flexbox */
     justify-content: space-between; /* Separa el título y la navegación */
     align-items: center; /* Alinea verticalmente el contenido */
-    padding: 10px; /* Espaciado interno */
+    padding: 8px; /* Espaciado interno */
   }
   
  
@@ -12,9 +12,7 @@ header {
   header + p {
     display: none; 
   }
-    html {
-      font-size: 8px;
-  }
+ 
 } 
   
   header nav ul li a {
@@ -29,9 +27,7 @@ header {
       flex-direction: column; /* Cambia la disposición a vertical */
       padding: 10px; /* Reducir el padding */
     }
-  html {
-      font-size: 12px;
-  }
+
     
   }
 
