@@ -37,6 +37,7 @@ main nav a{
   }
   main nav a{
     display: block;
+    width: 100%; 
     margin-bottom: 10px; /* Espacio entre los enlaces */
     padding: 10px 20px; /* Relleno dentro del botón */
     text-align: center;
