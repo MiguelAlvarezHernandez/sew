@@ -6,10 +6,9 @@ header {
     padding: 10px; /* Espaciado interno */
 }
 main nav a{
-  display: block;
+  display: inline-block;
   margin-bottom: 10px; /* Espacio entre los enlaces */
   padding: 10px 20px; /* Relleno dentro del botón */
-  text-align: center;
 }
   
   
@@ -37,10 +36,10 @@ main nav a{
     padding: 10px; /* Reducir el padding */
   }
   main nav a{
-    display: inline-block;
+    display: block;
     margin-bottom: 10px; /* Espacio entre los enlaces */
     padding: 10px 20px; /* Relleno dentro del botón */
-    
+    text-align: center;
   }
   
     
