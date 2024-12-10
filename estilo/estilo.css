@@ -1,25 +1,23 @@
 /* datos personales Miguel Álvare Hernández UO295368*/
-html {
-    font-size: 16px;
-}
+
 /*Especificidad: 001*/
 body {
     font-family: Tahoma, sans-serif;
-    font-size: 1rem; 
+    font-size: 1em; 
     line-height: 1.6;
     color: #080808;
     background-color: #fff;
     }
 /* Especificidad: 001 */
 header {
-    font-size: 2rem;
+    font-size: 1.5em;
     font-weight: bold;
     color: #ffffff;
     background-color: #0000ff; /* Color de fondo del header */
 }
 /* Especificidad: 002 */
 header + p {
-    font-size: 0.875rem;
+    font-size: 0.875em;
     font-style: italic;
     color: #666;
   }
@@ -27,7 +25,7 @@ header + p {
 
 /*Especificidad: 001*/
 h1 {
-    font-size: 0.75rem;
+    font-size: 0.75em;
     text-transform: uppercase;
     padding: 2em; 
     margin:0;
@@ -35,19 +33,19 @@ h1 {
     }
 /*Especificidad: 001*/
 h2 {
-    font-size: 2rem;
+    font-size: 2em;
     color: #0000ff; 
     /*Backgroung-color heredado de body*/   
     }
 /*Especificidad: 001*/
 h3 {
-    font-size: 1.5rem;
+    font-size: 1.5em;
     color: #0000ff; 
     /*Backgroung-color heredado de body*/   
     }
 /*Especificidad: 001*/
 h4 {
-    font-size: 1.25rem;
+    font-size: 1.25em;
     color: #0000ff;   
     /*Backgroung-color heredado de body*/ 
     }
@@ -59,7 +57,7 @@ nav {
 
 /* Especificidad: 002 */
 nav a{
-    font-size: 0.75rem;
+    font-size: 0.75em;
     color: #ffffff; /* Color del texto del nav */
     background-color: #0000ff; /* Fondo de la barra de navegación */
     text-decoration: none;
