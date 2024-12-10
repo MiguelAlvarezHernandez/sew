@@ -3,16 +3,24 @@ header {
     display: flex; /* Activa el esquema Flexbox */
     justify-content: space-between; /* Separa el título y la navegación */
     align-items: center; /* Alinea verticalmente el contenido */
-    padding: 8px; /* Espaciado interno */
-  }
+    padding: 10px; /* Espaciado interno */
+}
+main nav a{
+  display: block;
+  margin-bottom: 10px; /* Espacio entre los enlaces */
+  padding: 10px 20px; /* Relleno dentro del botón */
+  text-align: center;
+}
   
- 
+  
+  /* Estilos para el título dentro del encabezado */
+  
 @media (max-width: 465px) {
   /* Especificidad: 002 */
   header + p {
     display: none; 
   }
- 
+  
 } 
   
   header nav ul li a {
@@ -22,21 +30,18 @@ header {
   }
   
   /* Adaptación a pantallas pequeñas */
-  @media (max-width: 799px) {
-    header {
-      flex-direction: column; /* Cambia la disposición a vertical */
-      padding: 10px; /* Reducir el padding */
-    }
-
+@media (max-width: 799px) {
+  header {
+    display: flex; 
+    flex-direction: column; /* Cambia la disposición a vertical */
+    padding: 10px; /* Reducir el padding */
+  }
+  main nav a{
+    display: inline-block;
+    margin-bottom: 10px; /* Espacio entre los enlaces */
+    padding: 10px 20px; /* Relleno dentro del botón */
     
   }
-
-
-
-main nav a{
-  display: inline-block;
-  margin-bottom: 10px; /* Espacio entre los enlaces */
-  padding: 10px 20px; /* Relleno dentro del botón */
   
+    
 }
-  
