@@ -1,66 +1,66 @@
 /* datos personales Miguel Álvare Hernández UO295368*/
-
 /*Especificidad: 001*/
 body {
-    font-family: Tahoma, sans-serif;
-    font-size: 1em; 
-    line-height: 1.6;
-    color: #080808;
-    background-color: #fff;
-    }
+  font-family: Tahoma, sans-serif;
+  font-size: 1em; 
+  line-height: 1.6;
+  color: #080808;
+  background-color: #fff;
+  }
 /* Especificidad: 001 */
 header {
-    font-size: 1.5em;
-    font-weight: bold;
-    color: #ffffff;
-    background-color: #0000ff; /* Color de fondo del header */
+  font-size: 2em;
+  font-weight: bold;
+  color: #ffffff;
+  background-color: #0000ff; /* Color de fondo del header */
 }
 /* Especificidad: 002 */
 header + p {
-    font-size: 0.875em;
-    font-style: italic;
-    color: #666;
-  }
+  font-size: 0.875em;
+  font-style: italic;
+  color: #666;
+  /*Backgroung-color heredado de body*/
+}
 
 
 /*Especificidad: 001*/
 h1 {
-    font-size: 0.75em;
-    text-transform: uppercase;
-    padding: 2em; 
-    margin:0;
-    /*Backgroung-color heredado de body*/
-    }
+  font-size: 0.75em;
+  text-transform: uppercase;
+  padding: 2em; 
+  margin:0;
+  /*Backgroung-color heredado de body*/
+  }
 /*Especificidad: 001*/
 h2 {
-    font-size: 2em;
-    color: #0000ff; 
-    /*Backgroung-color heredado de body*/   
-    }
+  font-size: 2em;
+  color: #0000ff; 
+  /*Backgroung-color heredado de body*/   
+  }
 /*Especificidad: 001*/
 h3 {
-    font-size: 1.5em;
-    color: #0000ff; 
-    /*Backgroung-color heredado de body*/   
-    }
+  font-size: 1.5em;
+  color: #0000ff; 
+  /*Backgroung-color heredado de body*/   
+  }
 /*Especificidad: 001*/
 h4 {
-    font-size: 1.25em;
-    color: #0000ff;   
-    /*Backgroung-color heredado de body*/ 
-    }
+  font-size: 1.25em;
+  color: #0000ff;   
+  /*Backgroung-color heredado de body*/ 
+  }
 /* Especificidad: 001 */
 nav {
-    color: #ffffff; /* Color del texto del nav */
-    background-color: #0000ff; /* Fondo de la barra de navegación */
+  color: #ffffff; /* Color del texto del nav */
+  background-color: #0000ff; /* Fondo de la barra de navegación */
 }
 
 /* Especificidad: 002 */
 nav a{
-    font-size: 0.75em;
-    color: #ffffff; /* Color del texto del nav */
-    background-color: #0000ff; /* Fondo de la barra de navegación */
-    text-decoration: none;
+  font-size: 0.75em;
+  color: #ffffff; /* Color del texto del nav */
+  background-color: #0000ff; /* Fondo de la barra de navegación */
+  text-decoration: none;
 }
 
 /* Especificidad: 002 */
@@ -81,15 +81,17 @@ main nav a {
 
 /*Especificidad 012*/
 nav a.active {
-  color: #f10d0d; /* Color distintivo para el enlace activo */
+  color: #fae903; /* Color distintivo para el enlace activo */
   font-weight: bold; /* Hace el texto más grueso */
   text-decoration: underline; /* Agrega subrayado para destacar */
+  /*Background color heredado de nav a*/
 }
 
 /* Especificidad: 011 */
 a[href^="http"] {
     color: #007BFF; /* Color azul para no visitados */
-  text-decoration: none; /* Mantener sin subrayado */
+    text-decoration: none; /* Mantener sin subrayado */
+    /*Background color heredado de main nav a*/
 }
 
   
@@ -98,6 +100,7 @@ a[href^="http"] {
 a[href^="http"]:link {
     color: #007BFF; /* Color azul para no visitados */
     text-decoration: none; /* Mantener sin subrayado */
+    /*Background color heredado de main nav a*/
 }
   
   /* Efecto cuando el enlace ha sido visitado */
@@ -105,6 +108,7 @@ a[href^="http"]:link {
 a[href^="http"]:visited {
     color: #5A5A5A; /* Color gris para visitados */
     text-decoration: none; /* Mantener sin subrayado */
+    /*Background color heredado de main nav a*/
 }
   
   /* Efecto al pasar el ratón sobre el enlace */
@@ -113,6 +117,7 @@ a[href^="http"]:hover {
     color: #FF5733; /* Cambia a color naranja al pasar el ratón */
     text-decoration: none; /* Mantener sin subrayado en hover */
     transition: color 0.3s ease; /* Efecto de transición suave */
+    /*Background color heredado de main nav a*/
 }
   
   /* Efecto cuando el enlace está siendo clicado */
@@ -120,6 +125,7 @@ a[href^="http"]:hover {
 a[href^="http"]:active {
     color: #C70039; /* Color rojo cuando el enlace está activo */
     text-decoration: none; /* Mantener sin subrayado en active */
+    /*Background color heredado de main nav a*/
 }
 
 /* Especificidad: 001 */
@@ -128,6 +134,7 @@ ul {
     padding-left: 20px; /* Añade espacio entre la viñeta y el contenido */
     font-size: 1.2em; /* Ajusta el tamaño de la fuente */
     color: #333; /* Color de texto para los elementos de la lista */
+    /*Background color heredado de body*/
   }
   
   /* Listas ordenadas */
@@ -137,6 +144,7 @@ ol {
     padding-left: 20px; /* Espaciado entre números y el contenido */
     font-size: 1.2em; /* Ajusta el tamaño de la fuente */
     color: #333; /* Color de texto para los elementos de la lista */
+    /*Background color heredado de body*/
 }
   
   /* Listas anidadas dentro de una lista no ordenada */
@@ -146,6 +154,7 @@ ul ul {
     padding-left: 30px; /* Añade más espacio para la lista anidada */
     font-size: 1em; /* Tamaño de fuente ligeramente más pequeño */
     color: #666; /* Cambia el color del texto de la lista anidada */
+    /*Background color heredado de body*/
 }
   
   /* Listas anidadas dentro de una lista ordenada */
@@ -155,6 +164,7 @@ ol ol {
     padding-left: 30px; /* Espaciado para listas anidadas */
     font-size: 1em; /* Tamaño de fuente ligeramente más pequeño */
     color: #666; /* Cambia el color del texto de la lista anidada */
+    /*Background color heredado de body*/
 }
   
   /* Estilo para los elementos de lista no ordenada cuando se pasa el ratón */
@@ -162,6 +172,7 @@ ol ol {
 ul li:hover {
     color: #064d63; /* Cambia el color al pasar el ratón */
     font-weight: bold; /* Aplica negrita al elemento */
+    /*Background color heredado de body*/
 }
   
   /* Estilo para los elementos de lista ordenada cuando se pasa el ratón */
@@ -169,6 +180,7 @@ ul li:hover {
 ol li:hover {
     color: #064d63; /* Cambia el color al pasar el ratón */
     font-weight: bold; /* Aplica negrita al elemento */
+    /*Background color heredado de body*/
 }
   
 
@@ -178,6 +190,7 @@ dl {
     padding: 10px;
     background-color: #f9f9f9; /* Fondo claro para la lista */
     border-left: 4px solid #007bff; /* Línea vertical que resalta la lista */
+    /*color heredado de body*/
 }
   
   /* Término a definir (dt) */
@@ -188,6 +201,7 @@ dt {
     color: #007bff; /* Cambia el color del término para destacarlo */
     margin-bottom: 5px; /* Añade espacio debajo del término */
     text-transform: uppercase; /* Convierte el texto en mayúsculas */
+    /*Background color heredado de dl*/
 }
   
   /* Descripción del término (dd) */
@@ -207,16 +221,18 @@ dd {
 dt:hover {
     color: #0056b3; /* Cambia el color del término al pasar el ratón */
     cursor: pointer; /* Cambia el cursor para indicar interactividad */
+    /*Background color heredado de dl*/
 }
   
   /* Efecto hover en la descripción (dd) */
 /* Especificidad: 011 */
 dd:hover {
     background-color: #d6d8db; /* Cambia el color de fondo al pasar el ratón */
+    /*color heredado de dd*/
 }
   
 
-/* Estilo base de la tabla */
+/* Especificidad: 001 */
 table {
     width: 100%; /* Asegura que la tabla ocupe todo el ancho del contenedor */
     border-collapse: collapse; /* Quita los espacios entre las celdas */
@@ -225,7 +241,7 @@ table {
     text-align: left; /* Alinea el texto de las celdas a la izquierda */
   }
   
-  /* Estilo para las celdas del encabezado (th) */
+  /* Especificidad: 001 */
   th {
     background-color: #007bff; /* Color de fondo para los encabezados */
     color: white; /* Texto blanco para los encabezados */
@@ -233,21 +249,23 @@ table {
     border-bottom: 2px solid #0056b3; /* Borde inferior para destacar las columnas */
   }
   
-  /* Estilo para las celdas de datos (td) */
+  /* Especificidad: 001 */
   td {
     padding: 10px; /* Espacio interno en las celdas de datos */
     border-bottom: 1px solid #ddd; /* Borde inferior ligero entre las filas */
     color: #333; /* Color del texto */
+    /*Background color heredado de body*/
   }
   
-  /* Efecto hover para las filas */
+  /* Especificidad: 011 */
   tr:hover {
     background-color: #f1f1f1; /* Cambia el fondo de la fila al pasar el ratón */
+    /* color heredado de body*/
   }
 
   
 
-  /* Para hacer los videos adaptables */
+/* Especificidad: 001 */
 video {
     width: 100%; /* El video ocupará el 100% del contenedor */
     height: auto; /* Mantiene la proporción del video */
@@ -256,7 +274,7 @@ video {
     margin: 0 auto; /* Centra el video */
   }
   
-  /* Para hacer las imágenes adaptables */
+/* Especificidad: 001 */
 img {
     width: 100%; /* La imagen ocupará el 100% del contenedor */
     height: auto; /* Mantiene la proporción de la imagen */
@@ -265,3 +283,73 @@ img {
     margin: 0 auto; /* Centra la imagen */
 }
   
+
+
+/* CARRUSEL */
+/* Especificidad: 002 */
+h2 + article {
+  position: relative;
+  width: 100%;
+  max-width: 100vh;
+  height: 60vh; /* Definir la altura del contenedor del carrusel */
+  overflow: hidden;
+}
+/* Especificidad: 002 */
+article button {
+  position: absolute;
+  width: 2em;
+  height: 2em;
+  padding: 0.5em;
+  border: none;
+  border-radius: 50%;
+  z-index: 10;
+  cursor: pointer;
+  background-color: #fff;
+  font-size: 1em;
+  display: flex;
+  flex-direction: column;
+  align-items:center;
+  justify-content: center;
+  /*Color heredado de body*/
+}
+/* Especificidad: 011 */
+button:active {
+  transform: scale(1.1);
+}
+/* Especificidad: 011 */
+button:nth-of-type(2) {
+  top: 25%;
+  left: 2%;
+}
+/* Especificidad: 011 */
+button:nth-of-type(1) {
+  top: 25%;
+  right: 2%;
+}
+/* Especificidad: 002 */
+article + section {
+  width: 100%;
+  height: 100%;
+  max-width: 100vh;
+}
+/* Especificidad: 003 */
+h2 + article img {
+  width: 100%;
+  max-width: 100vh;
+  height: 60vh;
+  position: absolute;
+  transition: all 0.5s;
+  object-fit: cover;
+  border-radius: 0.5em;
+}
+/* Especificidad: 003 */
+p + section img{
+  width: 100%;
+  max-width: 100vh;
+}
+/* Especificidad: 003 */
+section + section > div  {
+  height: 100vh; 
+  width: 100%;
+  max-width: 100vh;
+}
