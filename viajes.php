@@ -58,55 +58,7 @@ class Moneda {
     <!-- Datos que describen el documento -->
     <meta charset="UTF-8" />
     <title>Viajes</title>
-    <style>
-        article {
-            position: relative;
-            width: 100%;
-            height: 60vh; /* Definir la altura del contenedor del carrusel */
-        }
-        img {
-            width: 100%;
-            max-width: 100vh;
-            height: 100%;
-            max-height: 60vh;
-            position: absolute;
-            transition: all 0.5s;
-            object-fit: cover;
-            border-radius: 0.5em;
-        }
-        button {
-            position: absolute;
-            width: 2em;
-            height: 2em;
-            padding: 0.5em;
-            border: none;
-            border-radius: 50%;
-            z-index: 10;
-            cursor: pointer;
-            background-color: #fff;
-            font-size: 1em;
-            display: flex;
-            flex-direction: column;
-            align-items:center;
-            justify-content: center;
-        }
-        button:active {
-            transform: scale(1.1);
-        }
-        button:nth-of-type(2) {
-            top: 25%;
-            left: 2%;
-        }
-        button:nth-of-type(1) {
-            top: 25%;
-            right: 2%;
-        }
-        section {
-            width: 100%;
-            height: 800px;
-        }
-        
-    </style>
+
 
     <meta name ="author" content = "Miguel Álvarez">
     <meta name="description" content="aqui cada documento debe tener la descripción 
@@ -117,7 +69,7 @@ class Moneda {
 
     <link rel="stylesheet" type="text/css" href="estilo/estilo.css" />
     <link rel="stylesheet" href="estilo/layout.css">
-    <link rel="icon" href="multimedia/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="multimedia/imagenes/favicon.ico" type="image/x-icon">
 
    
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -129,8 +81,8 @@ class Moneda {
 <body>
     <!-- Datos con el contenidos que aparece en el navegador -->
     <header>
-        <h1>F1 Desktop</h1>
-        <nav>
+    <h1><a href="index.html" title="Volver a Inicio">F1 Desktop</a></h1>
+    <nav>
             <a href="index.html" title="Inicio">Inicio</a>
             <a href="piloto.html" title="Piloto">Piloto</a>
             <a href="noticias.html" title="Noticias">Noticias</a>
@@ -146,6 +98,7 @@ class Moneda {
     
     <h2>Viajes</h2>
     <article>
+        <h3>Carrusel</h3>
         <?php
         $carrusel = new Carrusel('Manama', 'Barhein'); // Reemplaza 'Madrid' y 'España' con los valores adecuados
         $fotos = $carrusel->obtenerFotos();
@@ -170,8 +123,13 @@ class Moneda {
     ?>
 
    
-    <section></section>
-    <div style="height: 600px; width: 800px;"></div>
+    <section>
+        <h3>Mapa estático</h3>
+    </section>
+    <section>
+        <h3>Mapa dinámico</h3>
+        <div></div>
+    </section>
 
     <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBScz2OFH7IBs8aPAOufuoyYevvUm48SQU&callback=initMap"></script>
     <!-- <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBScz2OFH7IBs8aPAOufuoyYevvUm48SQU&callback=miViaje.initMap"></script>-->

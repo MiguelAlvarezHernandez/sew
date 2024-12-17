@@ -24,7 +24,7 @@ private function connectDB() {
 // Método para guardar el récord en la base de datos
 public function saveRecord($nombre, $apellidos, $nivel, $tiempo) {
     $stmt = $this->conn->prepare("INSERT INTO registro (nombre, apellidos, nivel, tiempo) VALUES (?, ?, ?, ?)");
-    $stmt->bind_param("sssd", $nombre, $apellidos, $nivel, $tiempo);
+    $stmt->bind_param("ssdd", $nombre, $apellidos, $nivel, $tiempo);
     $stmt->execute();
     $stmt->close();
 }
@@ -83,13 +83,14 @@ $record->closeDB();
     <link rel="stylesheet" href="estilo/semaforo_grid.css" />
 
     
+    <link rel="icon" href="multimedia/imagenes/favicon.ico" type="image/x-icon">
 
 </head>
 <body>
 
     <header>
-        <h1>F1 Desktop</h1>
-        <nav>
+    <h1><a href="index.html" title="Volver a Inicio">F1 Desktop</a></h1>
+    <nav>
             <a href="index.html" title="Inicio">Inicio</a>
             <a href="piloto.html" title="Piloto">Piloto</a>
             <a href="noticias.html" title="Noticias">Noticias</a>
@@ -97,7 +98,7 @@ $record->closeDB();
             <a href="meteorologia.html" title="Meteorología">Meteorología</a>
             <a href="circuito.html" title="Circuito">Circuito</a>
             <a href="viajes.php" title="Viajes">Viajes</a>
-            <a href="juegos.html" title="Juegos">Juegos</a>
+            <a href="juegos.html" class="active" title="Juegos">Juegos</a>
         </nav>
     </header>
 
@@ -108,10 +109,10 @@ $record->closeDB();
             <h3>Top 10 Récords para el Nivel <?php echo htmlspecialchars($nivel); ?></h3>
             <ol>
                 <?php foreach ($topRecords as $record): ?>
-                    <li><?php echo htmlspecialchars($record['nombre']) . " " . htmlspecialchars($record['apellidos']) . " - " . htmlspecialchars($record['tiempo']) . " segundos"; ?></li>
+                    <li><?php echo "\t" . htmlspecialchars($record['nombre']) . " " . htmlspecialchars($record['apellidos']) . " - " . htmlspecialchars($record['tiempo']) . " segundos"; ?></li>
                 <?php endforeach; ?>
             </ol>
-        <?php endif; ?>
+    <?php endif; ?>
     
     
     <script src="js/semaforo.js"></script>

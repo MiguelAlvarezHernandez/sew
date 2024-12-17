@@ -4,7 +4,7 @@
 <head>
     <!-- Datos que describen el documento -->
     <meta charset="UTF-8" />
-    <title>Juegos</title>
+    <title>F1 Media</title>
 
     <meta name ="author" content = "Miguel Álvarez">
     <meta name="description" content="aqui cada documento debe tener la descripción 
@@ -17,6 +17,10 @@
     <link rel="stylesheet" href="estilo/layout.css">
     <link rel="icon" href="multimedia/imagenes/favicon.ico" type="image/x-icon">
 
+   
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/api.js"></script>
+    
 </head>
 
 <body>
@@ -30,33 +34,41 @@
             <a href="calendario.html" title="Calendario">Calendario</a>
             <a href="meteorologia.html" title="Meteorología">Meteorología</a>
             <a href="circuito.html" title="Circuito">Circuito</a>
-            <a href="viajes.php" title="Viajes">Viajes</a>
+            <a href="viajes.html" title="Viajes">Viajes</a>
             <a href="juegos.html" class="active" title="Juegos">Juegos</a>
         </nav>
     </header>
 
-    <p>Estás en: <a href="index.html">Inicio</a> >> Juegos</p>
-
+    <p>Estás en: <a href="index.html">Inicio</a> >> <a href="juegos.html">Juegos</a> >> Juego Api</p>
+    
     <main>
-        <h2>Juegos</h2>
-    
-        <!-- Submenú de juegos específico dentro del contenido principal -->
-        <section>
-            <h3>Juegos disponibles</h3>
-            <p>Elige uno de los siguientes juegos para empezar a jugar:</p>
-            <nav>
-                <a href="memoria.html" title="Juego de Memoria">Juego de Memoria</a>
-                <a href="semaforo.php" title="Juego de Reacción">Juego de Reacción</a>
-                <a href="api.html" title="F1 Media">F1 Media</a>
-                <a href="php/libre.php" title="F1 Data">F1 Data</a>
-            </nav>
-        </section>
-    </main>
+        <h2>F1 Media</h2>
+        
 
-    
-    
-    
-    
+        
+        <section>
+            <h3>Subir Video</h3>
+            <label for="upload-video">Selecciona un archivo de video:</label>
+            <input type="file" id="upload-video" accept="video/*">
+            <video controls>
+                <!--<track kind="subtitles" src="subtitles.vtt" srclang="es" label="Español">-->
+            </video>
+        </section>
+        
+        <section>
+            <h3>Lista de Reproducción</h3>
+            <p>Arrastra y suelta videos aquí</p>
+        </section>
+
+        <section>
+            <h3>Cargar Video desde URL</h3>
+            <label for="video-url">Introduce la URL del video:</label>
+            <input type="text" id="video-url" placeholder="Introduce la URL del video">
+            <button>Cargar Video</button>
+        </section>
+        
+
+    </main>
 
 </body>
 </html>

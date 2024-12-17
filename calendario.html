@@ -4,7 +4,7 @@
 <head>
     <!-- Datos que describen el documento -->
     <meta charset="UTF-8" />
-    <title>Juegos</title>
+    <title>Calendario</title>
 
     <meta name ="author" content = "Miguel Álvarez">
     <meta name="description" content="aqui cada documento debe tener la descripción 
@@ -14,10 +14,15 @@
     <meta name ="viewport" content ="width=device-width, initial-scale=1.0" />
 
     <link rel="stylesheet" type="text/css" href="estilo/estilo.css" />
-    <link rel="stylesheet" href="estilo/layout.css">
+    <link rel="stylesheet" type="text/css" href="estilo/layout.css">
+    <link rel="stylesheet" type="text/css" href="estilo/agenda_grid.css">
     <link rel="icon" href="multimedia/imagenes/favicon.ico" type="image/x-icon">
 
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="js/agenda.js"></script>
 </head>
+
+
 
 <body>
     <!-- Datos con el contenidos que aparece en el navegador -->
@@ -27,36 +32,33 @@
             <a href="index.html" title="Inicio">Inicio</a>
             <a href="piloto.html" title="Piloto">Piloto</a>
             <a href="noticias.html" title="Noticias">Noticias</a>
-            <a href="calendario.html" title="Calendario">Calendario</a>
+            <a href="calendario.html" class="active" title="Calendario">Calendario</a>
             <a href="meteorologia.html" title="Meteorología">Meteorología</a>
             <a href="circuito.html" title="Circuito">Circuito</a>
             <a href="viajes.php" title="Viajes">Viajes</a>
-            <a href="juegos.html" class="active" title="Juegos">Juegos</a>
+            <a href="juegos.html" title="Juegos">Juegos</a>
         </nav>
     </header>
 
-    <p>Estás en: <a href="index.html">Inicio</a> >> Juegos</p>
+    <p>Estás en: <a href="index.html">Inicio</a> >> Calendario</p>
 
     <main>
-        <h2>Juegos</h2>
-    
-        <!-- Submenú de juegos específico dentro del contenido principal -->
-        <section>
-            <h3>Juegos disponibles</h3>
-            <p>Elige uno de los siguientes juegos para empezar a jugar:</p>
-            <nav>
-                <a href="memoria.html" title="Juego de Memoria">Juego de Memoria</a>
-                <a href="semaforo.php" title="Juego de Reacción">Juego de Reacción</a>
-                <a href="api.html" title="F1 Media">F1 Media</a>
-                <a href="php/libre.php" title="F1 Data">F1 Data</a>
-            </nav>
-        </section>
-    </main>
+    <h2>Calendario</h2>
 
-    
-    
-    
-    
+    <button>Cargar Carreras</button>
+    <section>
+        <h3>Carreras</h3>
+    </section>
+
+    <script>
+        $(document).ready(function() {
+            const agenda = new Agenda();
+            $('button').click(function() {
+                agenda.obtenerCarreras();
+            });
+        });
+    </script>
+    </main>
 
 </body>
 </html>
