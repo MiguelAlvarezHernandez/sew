@@ -29,7 +29,6 @@ h1 {
   text-transform: uppercase;
   padding: 2em; 
   margin:0;
-  /*Backgroung-color heredado de body*/
   }
 /*Especificidad: 001*/
 h2 {
@@ -53,6 +52,13 @@ h4 {
 nav {
   color: #ffffff; /* Color del texto del nav */
   background-color: #0000ff; /* Fondo de la barra de navegación */
+}
+
+/* Especificidad: 002 */
+h1 a{
+  color: #ffffff;
+  /*Backgroung-color heredado de header*/
+  text-decoration: none;
 }
 
 /* Especificidad: 002 */
@@ -89,7 +95,7 @@ nav a.active {
 
 /* Especificidad: 011 */
 a[href^="http"] {
-    color: #007BFF; /* Color azul para no visitados */
+    color: #1D62B6; /* Color azul para no visitados */
     text-decoration: none; /* Mantener sin subrayado */
     /*Background color heredado de main nav a*/
 }
@@ -98,7 +104,7 @@ a[href^="http"] {
   /* Efecto cuando el enlace no ha sido visitado */
 /* Especificidad: 021 */
 a[href^="http"]:link {
-    color: #007BFF; /* Color azul para no visitados */
+    color: #1D62B6; /* Color azul para no visitados */
     text-decoration: none; /* Mantener sin subrayado */
     /*Background color heredado de main nav a*/
 }
@@ -106,7 +112,7 @@ a[href^="http"]:link {
   /* Efecto cuando el enlace ha sido visitado */
 /* Especificidad: 021 */
 a[href^="http"]:visited {
-    color: #5A5A5A; /* Color gris para visitados */
+    color: #551A8B; /* Color gris para visitados */
     text-decoration: none; /* Mantener sin subrayado */
     /*Background color heredado de main nav a*/
 }
@@ -114,7 +120,7 @@ a[href^="http"]:visited {
   /* Efecto al pasar el ratón sobre el enlace */
 /* Especificidad: 021 */
 a[href^="http"]:hover {
-    color: #FF5733; /* Cambia a color naranja al pasar el ratón */
+    color: #FF7700; /* Cambia a color naranja al pasar el ratón */
     text-decoration: none; /* Mantener sin subrayado en hover */
     transition: color 0.3s ease; /* Efecto de transición suave */
     /*Background color heredado de main nav a*/
@@ -123,17 +129,16 @@ a[href^="http"]:hover {
   /* Efecto cuando el enlace está siendo clicado */
 /* Especificidad: 021 */
 a[href^="http"]:active {
-    color: #C70039; /* Color rojo cuando el enlace está activo */
+    color: #B30000; /* Color rojo cuando el enlace está activo */
     text-decoration: none; /* Mantener sin subrayado en active */
     /*Background color heredado de main nav a*/
 }
 
 /* Especificidad: 001 */
 ul {
-    list-style-type: circle; /* Cambia la viñeta a un cuadrado */
     padding-left: 20px; /* Añade espacio entre la viñeta y el contenido */
     font-size: 1.2em; /* Ajusta el tamaño de la fuente */
-    color: #333; /* Color de texto para los elementos de la lista */
+    color: #000000; /* Color de texto para los elementos de la lista */
     /*Background color heredado de body*/
   }
   
@@ -163,7 +168,7 @@ ol ol {
     list-style-type: lower-alpha; /* Utiliza letras minúsculas para la lista anidada */
     padding-left: 30px; /* Espaciado para listas anidadas */
     font-size: 1em; /* Tamaño de fuente ligeramente más pequeño */
-    color: #666; /* Cambia el color del texto de la lista anidada */
+    color: #252525; /* Cambia el color del texto de la lista anidada */
     /*Background color heredado de body*/
 }
   
@@ -243,7 +248,7 @@ table {
   
   /* Especificidad: 001 */
   th {
-    background-color: #007bff; /* Color de fondo para los encabezados */
+    background-color: #0000ff; /* Color de fondo para los encabezados */
     color: white; /* Texto blanco para los encabezados */
     padding: 10px; /* Relleno interno para mayor legibilidad */
     border-bottom: 2px solid #0056b3; /* Borde inferior para destacar las columnas */

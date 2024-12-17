@@ -57,7 +57,7 @@ class País {
             const $data = $(data);
             // const $prevision = $('#pervision');
             const $prevision = $('section');
-            $prevision.empty(); // Limpiar contenido anterior
+            //$prevision.empty(); // Limpiar contenido anterior
 
             const diasMostrados = new Set();
 
@@ -66,15 +66,16 @@ class País {
                     const dateTime = $element.attr('from');
                     const time = dateTime.split('T')[1].split(':')[0]; // Obtener la hora
                     const date = dateTime.split('T')[0]; // Obtener la fecha
+                    
 
                     if (time === '12' && !diasMostrados.has(date)) {
                         diasMostrados.add(date);
-
+                        console.log($element.find('precipitation'));
                         const tempMax = $element.find('temperature').attr('max');
                         const tempMin = $element.find('temperature').attr('min');
                         const humidity = $element.find('humidity').attr('value');
-                        const rain = $element.find('precipitation').attr('value') || '0';
-                        const icon = $element.find('symbol').attr('var');
+                        const rain = $element.find('precipitation').attr('probability') ;
+                        const icon = $element.find('symbol').attr('var') ;
 
 
                 const article = `

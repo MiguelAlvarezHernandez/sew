@@ -128,7 +128,7 @@ class Viajes {
     mostrarMapa() {
         var ubicacion = document.querySelector('section');
         var datos = `<img src="${this.getMapaEstaticoGoogle()}" alt="Mapa de mi ubicación">`;
-        ubicacion.innerHTML = datos;
+        ubicacion.innerHTML += datos;
     }
 
     initMap() {

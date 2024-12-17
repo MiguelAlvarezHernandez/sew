@@ -1,17 +1,23 @@
+/* Especificidad: 001 */
 main {
+    width: 60%;
+    height: 50%;
+    margin: auto;
+    
     display: grid;
-    grid-template-rows: auto 1fr auto auto;
     grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
-    width: 80%;
-    max-width: 600px;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 5% 3%;
+    align-items: center;
 }
 
+/* Especificidad: 001 */
 h2 {
-    grid-column: span 4;
+    grid-column: 1 / -1;
     text-align: center;
 }
 
+/* Especificidad: 001 */
 section {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -37,39 +43,45 @@ section {
     }
 }
 
-main.unload .light {
+/* Especificidad: 021 */
+main.unload div {
     animation: out 0.1s forwards;
 }
 
-.light {
-    background-color: #0007;
-    border: 2px solid #000;
-    border-radius: 50%;
+/* Especificidad: 010 */
+div {
+    background-color: #000A;
+    border: 5px solid black;
     aspect-ratio: 1;
-    opacity: 0.3;
-    transition: opacity 0.5s;
+    border-radius: 50%;
+    /*Color heredado de body*/
 }
 
-main.load .light:nth-child(1) {
+/* Especificidad: 031 */
+main.load div:nth-child(1) {
     animation: encenderLuz 0.5s forwards;
     animation-delay: 0.5s;
 }
 
-main.load .light:nth-child(2) {
+/* Especificidad: 031 */
+main.load div:nth-child(2) {
     animation: encenderLuz 0.5s forwards;
     animation-delay: 1s;
 }
 
-main.load .light:nth-child(3) {
+/* Especificidad: 031 */
+main.load div:nth-child(3) {
     animation: encenderLuz 0.5s forwards;
     animation-delay: 1.5s;
 }
 
-main.load .light:nth-child(4) {
+/* Especificidad: 031 */
+main.load div:nth-child(4) {
     animation: encenderLuz 0.5s forwards;
     animation-delay: 2s;
 }
 
+/* Especificidad: 001 */
 button {
     grid-column: span 2;
     padding: 10px;
@@ -77,10 +89,16 @@ button {
     cursor: pointer;
 }
 
+/* Especificidad: 012 */
 main button:nth-of-type(1) {
     justify-self: end;
 }
 
+/* Especificidad: 012 */
 main button:nth-of-type(2) {
     justify-self: start;
+}
+
+form{
+    grid-column: 1 / -1;
 }

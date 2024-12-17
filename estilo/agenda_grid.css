@@ -1,11 +1,17 @@
-
 /* Estilos generales */
 
-
+/* Especificidad: 001 */
 h3 {
     color: white;
+    /*Background color heredado de body */
+}
+/* Especificidad: 002 */
+section > h3 {
+    color: #0000ff; 
+    /*Backgroung-color heredado de body*/   
 }
 
+/* Especificidad: 001 */
 button {
     background-color: #007bff;
     color: white;
@@ -16,13 +22,15 @@ button {
     margin-bottom: 20px;
 }
 
+/* Especificidad: 011 */
 button:hover {
     background-color: #0056b3;
+    /*Color heredado de button*/
 }
 
 /* Estilos para las carreras */
-.carrera {
-    background-color: white;
+/* Especificidad: 001 */
+article {
     border: 1px solid #ddd;
     border-radius: 5px;
     padding: 15px;
@@ -30,23 +38,22 @@ button:hover {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.carrera header {
+/* Especificidad: 002 */
+article header {
     border-bottom: 1px solid #ddd;
     margin-bottom: 10px;
     padding-bottom: 10px;
 }
 
-.carrera h2 {
-    margin: 0;
-    font-size: 24px;
-    color: #007bff;
-}
-
-.carrera p {
+/* Especificidad: 002 */
+article p {
     margin: 5px 0;
     color: #555;
+    /*Background color heredado de body */
 }
 
-.carrera p strong {
+/* Especificidad: 003 */
+article p strong {
     color: #333;
+    /*Background color heredado de body */
 }

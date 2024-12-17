@@ -1,63 +1,63 @@
-$(document).ready(function() {
-    $('input').on('change', function(event) {
-        var archivo = event.target.files[0];
-        var areaVisualizacion = document.querySelector('pre');
-        var errorArchivo = document.createElement('p');
-        document.body.appendChild(errorArchivo);
+class FileProcessor {
+    constructor() {
+        this.areaVisualizacion = document.querySelector('pre');
+        this.errorArchivo = document.createElement('p');
+        document.body.appendChild(this.errorArchivo);
+    }
 
+    processFile(archivo) {
         if (archivo.name.endsWith('.xml')) {
-            procesarArchivoXML(archivo, areaVisualizacion);
+            this.processXML(archivo);
         } else if (archivo.name.endsWith('.kml')) {
-            procesarArchivoKML(archivo);
+            this.processKML(archivo);
         } else if (archivo.name.endsWith('.svg')) {
-            procesarArchivoSVG(archivo);
+            this.processSVG(archivo);
         } else {
-            errorArchivo.textContent = "Error: ¡¡¡ Archivo no válido !!!";
+            this.errorArchivo.textContent = "Error: ¡¡¡ Archivo no válido !!!";
         }
-    });
+    }
 
-
-    function procesarArchivoXML(archivo, areaVisualizacion) {
-        var lector = new FileReader();
-        lector.onload = function(evento) {
+    processXML(archivo) {
+        var reader = new FileReader();
+        reader.onload = (evento) => {
             var xmlContent = evento.target.result;
-            areaVisualizacion.textContent = formatXml(xmlContent);
+            this.areaVisualizacion.textContent = this.formatXml(xmlContent);
         };
-        lector.readAsText(archivo);
+        reader.readAsText(archivo);
     }
 
-    function procesarArchivoKML(archivo) {
-        var lector = new FileReader();
-        lector.onload = function(evento) {
+    processKML(archivo) {
+        var reader = new FileReader();
+        reader.onload = (evento) => {
             var kmlContent = evento.target.result;
-            mostrarMapaConKML(kmlContent);
+            this.showMapWithKML(kmlContent);
         };
-        lector.readAsText(archivo);
+        reader.readAsText(archivo);
     }
 
-    function procesarArchivoSVG(archivo) {
-        var lector = new FileReader();
-        lector.onload = function(evento) {
+    processSVG(archivo) {
+        var reader = new FileReader();
+        reader.onload = (evento) => {
             var svgContent = evento.target.result;
-            document.querySelector('section').innerHTML = svgContent;
+            document.querySelectorAll('section')[0].innerHTML += svgContent;
         };
-        lector.readAsText(archivo);
+        reader.readAsText(archivo);
     }
 
-    function formatXml(xml) {
+    formatXml(xml) {
         var formatted = '';
         var reg = /(>)(<)(\/*)/g;
         xml = xml.replace(reg, '$1\r\n$2$3');
         var pad = 0;
         jQuery.each(xml.split('\r\n'), function(index, node) {
             var indent = 0;
-            if (node.match(/.+<\/\w[^>]*>$/)) {//si la línea contiene una etiqueta de cierre
+            if (node.match(/.+<\/\w[^>]*>$/)) {
                 indent = 0;
-            } else if (node.match(/^<\/\w/)) {//si la línea comienza con una etiqueta de cierre
+            } else if (node.match(/^<\/\w/)) {
                 if (pad != 0) {
                     pad -= 1;
                 }
-            } else if (node.match(/^<\w[^>]*[^\/]>.*$/)) {//si la línea comienza con una etiqueta de apertura
+            } else if (node.match(/^<\w[^>]*[^\/]>.*$/)) {
                 indent = 1;
             } else {
                 indent = 0;
@@ -75,9 +75,7 @@ $(document).ready(function() {
         return formatted;
     }
 
-
-    function mostrarMapaConKML(kmlContent) {
-
+    showMapWithKML(kmlContent) {
         var parser = new DOMParser();
         var xmlDoc = parser.parseFromString(kmlContent, "text/xml");
         var coordinates = xmlDoc.getElementsByTagName("coordinates")[0].textContent.trim().split(",");
@@ -122,4 +120,14 @@ $(document).ready(function() {
 
         circuitPath.setMap(map);
     }
+}
+
+// Uso de la clase
+$(document).ready(function() {
+    const fileProcessor = new FileProcessor();
+
+    $('input').on('change', function(event) {
+        var archivo = event.target.files[0];
+        fileProcessor.processFile(archivo);
+    });
 });

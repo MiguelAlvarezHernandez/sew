@@ -1,6 +1,6 @@
 class Agenda {
     constructor() {
-        this.apiUrl = 'http://ergast.com/api/f1/current.json';
+        this.apiUrl = 'https://ergast.com/api/f1/current.json';
     }
     obtenerCarreras() {
         $.ajax({
@@ -18,7 +18,7 @@ class Agenda {
                     const fechaHora = `${carrera.date} ${carrera.time}`;
 
                     html += `
-                        <article class="carrera">
+                        <article>
                             <header>
                                 <h3>${nombreCarrera}</h3>
                             </header>
@@ -29,7 +29,8 @@ class Agenda {
                     `;
                 });
 
-                $('#carreras').html(html);
+                //$('section').html(html);
+                $('section').append(html);
             },
             error: () => {
                 $("h3").html("¡Tenemos problemas! No puedo obtener JSON de <a href='http://ergast.com/mrd/'>Ergast API</a>"); 

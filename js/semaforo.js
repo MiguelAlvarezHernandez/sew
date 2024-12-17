@@ -16,7 +16,6 @@ class Semaforo {
     }
 
     createStructure() {
-        
         const main = document.querySelector('main');
 
         // Crear y añadir el título del juego
@@ -25,13 +24,13 @@ class Semaforo {
         main.appendChild(title);
 
         // Crear y añadir las luces del semáforo
-        const trafficLight = document.createElement('section');
+        //const trafficLight = document.createElement('section');
         for (let i = 0; i < this.lights; i++) {
             const light = document.createElement('div');
-            light.className = 'light';
-            trafficLight.appendChild(light);
+            //light.className = 'light';
+            main.appendChild(light);
         }
-        main.appendChild(trafficLight);
+        //main.appendChild(trafficLight);
 
         // Crear y añadir el botón de inicio
         const startButton = document.createElement('button');
@@ -109,8 +108,13 @@ class Semaforo {
 
 
     createRecordForm(difficulty, reactionTime) {
+        const existingForm = document.querySelector('form');
+        if (existingForm) {
+            existingForm.remove(); 
+        }
+        
         const formHtml = `
-            <form id="recordForm" action="semaforo.php" method="POST">
+            <form action="semaforo.php" method="POST">
                 <label for="nombre">Nombre:</label>
                 <input type="text" id="nombre" name="nombre" required><br>
                 <label for="apellidos">Apellidos:</label>

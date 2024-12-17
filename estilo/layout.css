@@ -1,43 +1,52 @@
 /* Flexbox aplicado al encabezado */
+/* Especificidad: 001 */
 header {
     display: flex; /* Activa el esquema Flexbox */
     justify-content: space-between; /* Separa el título y la navegación */
     align-items: center; /* Alinea verticalmente el contenido */
     padding: 10px; /* Espaciado interno */
 }
+/* Especificidad: 003 */
 main nav a{
   display: inline-block;
   margin-bottom: 10px; /* Espacio entre los enlaces */
   padding: 10px 20px; /* Relleno dentro del botón */
 }
-  
-  
-  /* Estilos para el título dentro del encabezado */
-  
+
+/* Estilos para el título dentro del encabezado */
 @media (max-width: 465px) {
   /* Especificidad: 002 */
+  /*Quitar migas*/
   header + p {
     display: none; 
   }
-  
-} 
-  
-  header nav ul li a {
-    color: white; /* Color de los enlaces */
-    text-decoration: none; /* Elimina el subrayado */
-    font-size: 1em;
+  header nav a{
+    display: block; /* Hace que el enlace ocupe toda la línea */
+    width: 100%; /* Asegura que el ancho sea del 100% */
   }
   
-  /* Adaptación a pantallas pequeñas */
+} 
+  /* Especificidad: 005 */
+  /*header nav ul li a {
+    color: white; /* Color de los enlaces 
+    text-decoration: none; /* Elimina el subrayado 
+    font-size: 1em;
+  }*/
+  
+/* Adaptación a pantallas pequeñas */
 @media (max-width: 799px) {
+  /* Especificidad: 001 */
   header {
     display: flex; 
     flex-direction: column; /* Cambia la disposición a vertical */
+    text-align: center;
     padding: 10px; /* Reducir el padding */
   }
+
+  /* Especificidad: 003 */
+  /*Display de minimjuegos*/
   main nav a{
     display: block;
-    width: 100%; 
     margin-bottom: 10px; /* Espacio entre los enlaces */
     padding: 10px 20px; /* Relleno dentro del botón */
     text-align: center;
@@ -45,3 +54,6 @@ main nav a{
   
     
 }
+
+
+

@@ -24,7 +24,6 @@ class Noticias {
         lineas.forEach(linea => {
             const [titular, entradilla, autor] = linea.split('_');
             const noticia = document.createElement('article');
-            noticia.setAttribute('data-noticia', '');
 
             const header = document.createElement('header');
             const tituloElemento = document.createElement('h3');
@@ -87,20 +86,27 @@ class Noticias {
     crearFormulario() {
         const contenedorFormulario = document.querySelectorAll('section')[0];
 
+
         const tituloLabel = document.createElement('label');
         tituloLabel.textContent = 'Titular:';
         const tituloInput = document.createElement('input');
         tituloInput.type = 'text';
+        tituloInput.id = 'titulo';
+        tituloLabel.setAttribute('for', 'titulo');
 
         const entradillaLabel = document.createElement('label');
         entradillaLabel.textContent = 'Entradilla:';
         const entradillaInput = document.createElement('input');
-        entradillaInput.type = 'text';
+        entradillaInput.id = 'entradilla';
+        entradillaLabel.setAttribute('for', 'entradilla');
 
         const autorLabel = document.createElement('label');
         autorLabel.textContent = 'Autor:';
         const autorInput = document.createElement('input');
         autorInput.type = 'text';
+        autorInput.id = 'autor';
+        autorLabel.setAttribute('for', 'autor');
+        
 
         const agregarButton = document.createElement('button');
         agregarButton.textContent = 'Agregar Noticia';
@@ -115,6 +121,7 @@ class Noticias {
         contenedorFormulario.appendChild(autorInput);
         contenedorFormulario.appendChild(document.createElement('br'));
         contenedorFormulario.appendChild(agregarButton);
+
 
         agregarButton.addEventListener('click', () => {
             const titular = tituloInput.value;

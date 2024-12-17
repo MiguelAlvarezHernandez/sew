@@ -6,7 +6,8 @@ class Fondo{
     }
     obtenerImagenCircuito() {
         const apiKey = 'e087c01a85e25f380d54a26bf2a00148'; 
-        const tags = this.circuito;
+        const piloto = "Lance Stroll";
+        const tags = `${this.circuito},${piloto}`;
         const url = `https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&tags=${tags}&format=json&nojsoncallback=1`;
 
         $.ajax({
@@ -31,5 +32,5 @@ class Fondo{
     }
 }
 
-const fondoEjemplo = new Fondo('Barhein', 'Sahkir', 'Barhein');
+const fondoEjemplo = new Fondo('Barhain', 'Sahkir', 'Bahrain International Circuit');
 fondoEjemplo.obtenerImagenCircuito();

@@ -15,7 +15,8 @@ main section {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 10px;
-    max-width: 800px;
+    width: 100%; /* Cambia de 100vh a 100% */
+    max-width: 100vh;
     margin: auto;
 }
 
@@ -28,8 +29,10 @@ article {
     cursor: pointer; 
     transition: transform 0.5s; 
     transform-style: preserve-3d;
-    border: 2px solid #000000; /* Color gris claro por defecto */
-    border-radius: 8px; /* Bordes redondeados opcionales */
+    border: 2px solid #000000; 
+    border-radius: 8px;
+    background-color: #6eb8e9; 
+    /*Color heredado de body*/
 }
 
 
@@ -49,7 +52,8 @@ article h3 {
     left: 50%;
     transform: translate(-50%, -50%) rotateY(0deg); 
     font-size: 1.2em;
-    color: #333; 
+    color: #000000; 
+    /*Background-color heredado de article*/
     z-index: 1; 
     backface-visibility: hidden; 
 }
@@ -71,14 +75,17 @@ article[data-state="flip"] h3 {
 
 /* Media queries para adaptabilidad */
 @media (max-width: 600px) {
-    /* Especificidad: 001 */
     article {
         /*Se redefine la anchura y el ancho de las cartas*/ 
-        width: 80px;
-        height: 80px;
+        width: 10vh;
+        height: 10vh;
     }
     /* Especificidad: 002 */
     article h3 {
+        font-size: 1em;
+    }
+    /* Especificidad: 001 */
+    p{
         font-size: 1em;
     }
 }
@@ -86,11 +93,60 @@ article[data-state="flip"] h3 {
 @media (max-width: 400px) {
     /* Especificidad: 001 */
     article {
-        width: 60px;
-        height: 60px;
+        width: 7vh;
+        height: 7vh;
     }
     /* Especificidad: 002 */
-    article h3 {
-        font-size: 0.8em;
+    article h3{
+        font-size: 0.7em;
     }
+    /* Especificidad: 001 */
+    p{
+        font-size: 0.7em;
+    }
+}
+
+/* Especificidad: 001 */
+h2{
+    grid-column: 1 / -1;
+}
+
+/* Especificidad: 001 */
+p{
+    justify-self: start; 
+}
+
+/* Especificidad: 002 */
+section p{
+    grid-column: 1 / -1;
+    text-align: left;
+}
+
+/* Especificidad: 002 */
+h2 + p {
+    grid-column: 1 / span 3; 
+    text-align: left;
+    
+}
+
+/* Especificidad: 001 */
+button {
+    grid-column: 4; 
+    justify-self: center; 
+    padding: 12px 20px;
+    font-size: 1em;
+    background: linear-gradient(45deg, #4CAF50, #81C784);
+    background-color: #4CAF50;
+    color: white; 
+    border: none;
+    border-radius: 8px; 
+    cursor: pointer; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+}
+
+/* Especificidad: 002 */
+button + p{
+    border: 2px solid #4CAF50; 
+    border-radius: 8px;  
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
