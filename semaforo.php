@@ -31,10 +31,13 @@ public function saveRecord($nombre, $apellidos, $nivel, $tiempo) {
 
 // Método para obtener los 10 mejores récords para un nivel específico
 public function getTopRecords($nivel) {
-    $stmt = $this->conn->prepare("SELECT nombre, apellidos, tiempo FROM registro WHERE nivel = ? ORDER BY tiempo ASC LIMIT 10");
-    $stmt->bind_param("d", $nivel);
+    $stmt = $this->conn->prepare("SELECT nombre, apellidos, tiempo FROM registro WHERE nivel BETWEEN ? - 0.001 AND ? + 0.001 ORDER BY tiempo ASC LIMIT 10");
+    $stmt->bind_param("dd", $nivel, $nivel);
     $stmt->execute();
     $result = $stmt->get_result();
+    if (!$result) {
+        die("Error obteniendo los resultados: " . $this->conn->error);
+    }
     $records = $result->fetch_all(MYSQLI_ASSOC);
     $stmt->close();
     return $records;
