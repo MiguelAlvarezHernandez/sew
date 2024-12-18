@@ -1,0 +1,68 @@
+<!DOCTYPE HTML>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <title>Juego de Tiempo de Reacción</title>
+    <meta name="author" content="Miguel Álvarez">
+    <meta name="description" content="Juego de tiempo de reacción del proyecto F1 Desktop" />
+    <meta name ="keywords" content ="F1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <link rel="stylesheet" href="estilo/estilo.css" />
+    <link rel="stylesheet" href="estilo/layout.css" />
+    <link rel="stylesheet" href="estilo/semaforo_grid.css" />
+
+    
+    <link rel="icon" href="multimedia/imagenes/favicon.ico" type="image/x-icon">
+
+</head>
+<body>
+
+    <header>
+    <h1><a href="index.html" title="Volver a Inicio">F1 Desktop</a></h1>
+    <nav>
+            <a href="index.html" title="Inicio">Inicio</a>
+            <a href="piloto.html" title="Piloto">Piloto</a>
+            <a href="noticias.html" title="Noticias">Noticias</a>
+            <a href="calendario.html" title="Calendario">Calendario</a>
+            <a href="meteorologia.html" title="Meteorología">Meteorología</a>
+            <a href="circuito.html" title="Circuito">Circuito</a>
+            <a href="viajes.php" title="Viajes">Viajes</a>
+            <a href="juegos.html" class="active" title="Juegos">Juegos</a>
+        </nav>
+    </header>
+
+    <p>Estás en: <a href="index.html">Inicio</a> >> <a href="juegos.html">Juegos</a> >> Juego de Tiempo de Reacción</p>
+
+    <main class=""><h2>Semáforo</h2><div></div><div></div><div></div><div></div><button>Arranque</button><button disabled="">Reacción</button>
+            <form action="semaforo.php" method="POST">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required=""><br>
+                <label for="apellidos">Apellidos:</label>
+                <input type="text" id="apellidos" name="apellidos" required=""><br>
+                <label for="nivel">Nivel:</label>
+                <input type="text" id="nivel" name="nivel" value="0.5" readonly=""><br>
+                <label for="tiempo">Tiempo de Reacción (s):</label>
+                <input type="text" id="tiempo" name="tiempo" value="0.367" readonly=""><br>
+                <input type="submit" value="Guardar Récord">
+            </form>
+        </main>
+   
+<section>            <h3>Top 10 Récords para el Nivel 0.5</h3>
+            <ol>
+                                    <li>Miguel Alvarez - 0.181 segundos</li>
+                                    <li>Miguel Alvarez - 0.181 segundos</li>
+                                    <li>Miguel Alvarez - 0.181 segundos</li>
+                                    <li>Miguel Alvarez - 0.181 segundos</li>
+                                    <li>Miguel Alvarez - 0.181 segundos</li>
+                                    <li>Miguel Alvarez - 0.181 segundos</li>
+                                    <li>Miguel Alvarez - 0.181 segundos</li>
+                                    <li>Miguel Alvarez - 0.181 segundos</li>
+                                    <li>kiuykhki iujkliujlkghl - 0.227 segundos</li>
+                                    <li>kiuykhki iujkliujlkghl - 0.227 segundos</li>
+                            </ol>
+        </section>
+    
+    
+    <script src="js/semaforo.js"></script>
+</body>
