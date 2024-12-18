@@ -1,10 +1,10 @@
 /* Flexbox aplicado al encabezado */
 /* Especificidad: 001 */
 header {
-    display: flex; /* Activa el esquema Flexbox */
-    justify-content: space-between; /* Separa el título y la navegación */
-    align-items: center; /* Alinea verticalmente el contenido */
-    padding: 10px; /* Espaciado interno */
+  display: flex; /* Activa el esquema Flexbox */
+  justify-content: space-between; /* Separa el título y la navegación */
+  align-items: center; /* Alinea verticalmente el contenido */
+  padding: 10px; /* Espaciado interno */
 }
 /* Especificidad: 003 */
 main nav a{
@@ -43,16 +43,14 @@ main nav a{
     padding: 10px; /* Reducir el padding */
   }
 
-  /* Especificidad: 003 */
-  /*Display de minimjuegos*/
+/* Especificidad: 003 */
+/*Display de minijuegos*/
   main nav a{
     display: block;
-    margin-bottom: 10px; /* Espacio entre los enlaces */
-    padding: 10px 20px; /* Relleno dentro del botón */
+    margin-bottom: 10px; 
+    padding: 10px 20px; 
     text-align: center;
   }
-  
-    
 }
 
 

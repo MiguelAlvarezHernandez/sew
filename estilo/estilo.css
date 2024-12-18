@@ -1,4 +1,4 @@
-/* datos personales Miguel Álvare Hernández UO295368*/
+/* datos personales Miguel Álvarez Hernández UO295368*/
 /*Especificidad: 001*/
 body {
   font-family: Tahoma, sans-serif;
@@ -50,8 +50,8 @@ h4 {
   }
 /* Especificidad: 001 */
 nav {
-  color: #ffffff; /* Color del texto del nav */
-  background-color: #0000ff; /* Fondo de la barra de navegación */
+  color: #ffffff; 
+  background-color: #0000ff; 
 }
 
 /* Especificidad: 002 */
@@ -64,8 +64,8 @@ h1 a{
 /* Especificidad: 002 */
 nav a{
   font-size: 0.75em;
-  color: #ffffff; /* Color del texto del nav */
-  background-color: #0000ff; /* Fondo de la barra de navegación */
+  color: #ffffff; 
+  background-color: #0000ff; 
   text-decoration: none;
 }
 
@@ -76,216 +76,204 @@ main nav {
 }
 /* Especificidad: 003 */
 main nav a {
-  color: #000; /* Color del texto */
-  background-color: #fff; /* Color de fondo */
-  border: 2px solid #080808; /* Borde del botón */
-  border-radius: 5px; /* Bordes redondeados */
-  text-decoration: none; /* Quitar subrayado */
-  transition: background-color 0.3s; /* Transición suave para el hover */
+  color: #000; 
+  background-color: #fff; 
+  border: 2px solid #080808; 
+  border-radius: 5px;
+  text-decoration: none; 
+  transition: background-color 0.3s; 
 }
 
 
 /*Especificidad 012*/
 nav a.active {
-  color: #fae903; /* Color distintivo para el enlace activo */
-  font-weight: bold; /* Hace el texto más grueso */
-  text-decoration: underline; /* Agrega subrayado para destacar */
+  color: #fae903; 
+  font-weight: bold; 
+  text-decoration: underline; 
   /*Background color heredado de nav a*/
 }
 
 /* Especificidad: 011 */
 a[href^="http"] {
-    color: #1D62B6; /* Color azul para no visitados */
-    text-decoration: none; /* Mantener sin subrayado */
+    color: #1D62B6; 
+    text-decoration: none; 
     /*Background color heredado de main nav a*/
 }
 
   
-  /* Efecto cuando el enlace no ha sido visitado */
 /* Especificidad: 021 */
 a[href^="http"]:link {
-    color: #1D62B6; /* Color azul para no visitados */
-    text-decoration: none; /* Mantener sin subrayado */
+    color: #1D62B6; 
+    text-decoration: none; 
     /*Background color heredado de main nav a*/
 }
   
-  /* Efecto cuando el enlace ha sido visitado */
 /* Especificidad: 021 */
 a[href^="http"]:visited {
-    color: #551A8B; /* Color gris para visitados */
-    text-decoration: none; /* Mantener sin subrayado */
+    color: #551A8B; 
+    text-decoration: none; 
     /*Background color heredado de main nav a*/
 }
   
-  /* Efecto al pasar el ratón sobre el enlace */
 /* Especificidad: 021 */
 a[href^="http"]:hover {
-    color: #FF7700; /* Cambia a color naranja al pasar el ratón */
-    text-decoration: none; /* Mantener sin subrayado en hover */
-    transition: color 0.3s ease; /* Efecto de transición suave */
+    color: #FF7700; 
+    text-decoration: none; 
+    transition: color 0.3s ease; 
     /*Background color heredado de main nav a*/
 }
   
-  /* Efecto cuando el enlace está siendo clicado */
 /* Especificidad: 021 */
 a[href^="http"]:active {
-    color: #B30000; /* Color rojo cuando el enlace está activo */
-    text-decoration: none; /* Mantener sin subrayado en active */
+    color: #B30000; 
+    text-decoration: none;
     /*Background color heredado de main nav a*/
 }
 
 /* Especificidad: 001 */
 ul {
-    padding-left: 20px; /* Añade espacio entre la viñeta y el contenido */
-    font-size: 1.2em; /* Ajusta el tamaño de la fuente */
-    color: #000000; /* Color de texto para los elementos de la lista */
+    padding-left: 20px; 
+    font-size: 1.2em;
+    color: #000000; 
     /*Background color heredado de body*/
   }
   
-  /* Listas ordenadas */
 /* Especificidad: 001 */
 ol {
     list-style-type: decimal; 
-    padding-left: 20px; /* Espaciado entre números y el contenido */
-    font-size: 1.2em; /* Ajusta el tamaño de la fuente */
-    color: #333; /* Color de texto para los elementos de la lista */
+    padding-left: 20px;
+    font-size: 1.2em; 
+    color: #333; 
     /*Background color heredado de body*/
 }
   
   /* Listas anidadas dentro de una lista no ordenada */
 /* Especificidad: 002 */
 ul ul {
-    list-style-type: circle; /* Cambia la viñeta a un círculo */
-    padding-left: 30px; /* Añade más espacio para la lista anidada */
-    font-size: 1em; /* Tamaño de fuente ligeramente más pequeño */
-    color: #666; /* Cambia el color del texto de la lista anidada */
+    list-style-type: circle; 
+    padding-left: 30px; 
+    font-size: 1em;
+    color: #666; 
     /*Background color heredado de body*/
 }
   
-  /* Listas anidadas dentro de una lista ordenada */
 /* Especificidad: 002 */
 ol ol {
-    list-style-type: lower-alpha; /* Utiliza letras minúsculas para la lista anidada */
-    padding-left: 30px; /* Espaciado para listas anidadas */
-    font-size: 1em; /* Tamaño de fuente ligeramente más pequeño */
-    color: #252525; /* Cambia el color del texto de la lista anidada */
+    list-style-type: lower-alpha; 
+    padding-left: 30px;
+    font-size: 1em; 
+    color: #252525;
     /*Background color heredado de body*/
 }
   
-  /* Estilo para los elementos de lista no ordenada cuando se pasa el ratón */
 /* Especificidad: 012 */
 ul li:hover {
-    color: #064d63; /* Cambia el color al pasar el ratón */
-    font-weight: bold; /* Aplica negrita al elemento */
+    color: #064d63; 
+    font-weight: bold; 
     /*Background color heredado de body*/
 }
   
-  /* Estilo para los elementos de lista ordenada cuando se pasa el ratón */
 /* Especificidad: 012 */
 ol li:hover {
-    color: #064d63; /* Cambia el color al pasar el ratón */
-    font-weight: bold; /* Aplica negrita al elemento */
+    color: #064d63;
+    font-weight: bold; 
     /*Background color heredado de body*/
 }
   
 
 /* Especificidad: 001 */
 dl {
-    margin: 20px 0; /* Margen alrededor de la lista de definición */
+    margin: 20px 0; 
     padding: 10px;
-    background-color: #f9f9f9; /* Fondo claro para la lista */
-    border-left: 4px solid #007bff; /* Línea vertical que resalta la lista */
+    background-color: #f9f9f9;
+    border-left: 4px solid #007bff; 
     /*color heredado de body*/
 }
   
-  /* Término a definir (dt) */
 /* Especificidad: 001 */
 dt {
-    font-weight: bold; /* Resalta el término con negrita */
-    font-size: 1.2em; /* Aumenta ligeramente el tamaño del texto */
-    color: #007bff; /* Cambia el color del término para destacarlo */
-    margin-bottom: 5px; /* Añade espacio debajo del término */
-    text-transform: uppercase; /* Convierte el texto en mayúsculas */
+    font-weight: bold;
+    font-size: 1.2em; 
+    color: #007bff;
+    margin-bottom: 5px; 
+    text-transform: uppercase;
     /*Background color heredado de dl*/
 }
   
-  /* Descripción del término (dd) */
 /* Especificidad: 001 */
 dd {
-    margin-left: 20px; /* Indentación para diferenciar el término de su definición */
-    font-size: 1em; /* Tamaño de texto estándar */
-    color: #333; /* Color del texto de la descripción */
-    background-color: #e9ecef; /* Fondo claro para la definición */
-    padding: 10px; /* Espacio interno para la definición */
-    border-radius: 5px; /* Bordes redondeados para la definición */
+    margin-left: 20px; 
+    font-size: 1em;
+    color: #333;
+    background-color: #e9ecef; 
+    padding: 10px;
+    border-radius: 5px;
     line-height: 1.5; /* Espaciado entre líneas */
 }
   
-  /* Efecto hover en el término (dt) */
 /* Especificidad: 011 */
 dt:hover {
-    color: #0056b3; /* Cambia el color del término al pasar el ratón */
-    cursor: pointer; /* Cambia el cursor para indicar interactividad */
+    color: #0056b3; 
+    cursor: pointer; 
     /*Background color heredado de dl*/
 }
   
-  /* Efecto hover en la descripción (dd) */
 /* Especificidad: 011 */
 dd:hover {
-    background-color: #d6d8db; /* Cambia el color de fondo al pasar el ratón */
+    background-color: #d6d8db; 
     /*color heredado de dd*/
 }
   
 
 /* Especificidad: 001 */
 table {
-    width: 100%; /* Asegura que la tabla ocupe todo el ancho del contenedor */
-    border-collapse: collapse; /* Quita los espacios entre las celdas */
-    margin: 20px 0; /* Margen superior e inferior para la tabla */
-    font-size: 1em; /* Tamaño de fuente estándar */
-    text-align: left; /* Alinea el texto de las celdas a la izquierda */
-  }
+  width: 100%;
+  border-collapse: collapse; 
+  margin: 20px 0; 
+  font-size: 1em;
+  text-align: left;
+}
   
   /* Especificidad: 001 */
-  th {
-    background-color: #0000ff; /* Color de fondo para los encabezados */
-    color: white; /* Texto blanco para los encabezados */
-    padding: 10px; /* Relleno interno para mayor legibilidad */
-    border-bottom: 2px solid #0056b3; /* Borde inferior para destacar las columnas */
-  }
+th {
+  background-color: #0000ff; 
+  color: white; 
+  padding: 10px; 
+  border-bottom: 2px solid #0056b3; 
+}
   
   /* Especificidad: 001 */
-  td {
-    padding: 10px; /* Espacio interno en las celdas de datos */
-    border-bottom: 1px solid #ddd; /* Borde inferior ligero entre las filas */
-    color: #333; /* Color del texto */
-    /*Background color heredado de body*/
-  }
+td {
+  padding: 10px; 
+  border-bottom: 1px solid #ddd; 
+  color: #333; 
+  /*Background color heredado de body*/
+}
   
   /* Especificidad: 011 */
-  tr:hover {
-    background-color: #f1f1f1; /* Cambia el fondo de la fila al pasar el ratón */
-    /* color heredado de body*/
-  }
+tr:hover {
+  background-color: #f1f1f1; 
+  /* color heredado de body*/
+}
 
   
 
 /* Especificidad: 001 */
 video {
-    width: 100%; /* El video ocupará el 100% del contenedor */
-    height: auto; /* Mantiene la proporción del video */
-    max-width: 100%; /* No se expandirá más allá de su contenedor */
-    display: block; /* Elimina el espacio extra debajo del video en algunos navegadores */
-    margin: 0 auto; /* Centra el video */
+    width: 100%; 
+    height: auto; 
+    max-width: 100%; 
+    display: block; 
+    margin: 0 auto;
   }
   
 /* Especificidad: 001 */
 img {
-    width: 100%; /* La imagen ocupará el 100% del contenedor */
-    height: auto; /* Mantiene la proporción de la imagen */
-    max-width: 100%; /* Evita que la imagen se expanda fuera de su contenedor */
-    display: block; /* Elimina el espacio extra debajo de la imagen */
-    margin: 0 auto; /* Centra la imagen */
+    width: 100%; 
+    height: auto; 
+    max-width: 100%;
+    display: block; 
+    margin: 0 auto;
 }
   
 
@@ -296,7 +284,7 @@ h2 + article {
   position: relative;
   width: 100%;
   max-width: 100vh;
-  height: 60vh; /* Definir la altura del contenedor del carrusel */
+  height: 60vh; 
   overflow: hidden;
 }
 /* Especificidad: 002 */

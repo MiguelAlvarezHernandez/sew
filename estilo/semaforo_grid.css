@@ -28,18 +28,22 @@ section {
 @keyframes encenderLuz {
     from {
         background-color: #0007;
+        /*Color heredado*/
     }
     to {
         background-color: red;
+        /*Color heredado*/
     }
 }
 
 @keyframes out {
     from {
         background-color: red;
+        /*Color heredado*/
     }
     to {
         background-color: #0007;
+        /*Color heredado*/
     }
 }
 
@@ -85,7 +89,7 @@ main.load div:nth-child(4) {
 button {
     grid-column: span 2;
     padding: 10px;
-    font-size: 16px;
+    font-size: 1em;
     cursor: pointer;
 }
 
@@ -99,6 +103,7 @@ main button:nth-of-type(2) {
     justify-self: start;
 }
 
+/* Especificidad: 001 */
 form{
     grid-column: 1 / -1;
 }

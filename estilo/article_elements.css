@@ -18,7 +18,7 @@ article h3 {
 }
 
 /* Especificidad: 004 */
-script + section article h3 {
+section article header h3 {
     margin-top: 0;
     font-size: 1.5em;
     color: #ffffff;
@@ -49,6 +49,13 @@ section + section {
 /* Especificidad: 002 */
 section button {
     margin-top: 2vh;
+}
+
+/* Especificidad: 002 */
+article p{
+    color: #000000;
+    font-size: 1em;
+    /*Background color heredado de body*/
 }
 
 

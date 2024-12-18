@@ -24,7 +24,6 @@ main section {
 article {
     width: 15vh; 
     height: 15vh; 
-    perspective: 1000px;
     position: relative;
     cursor: pointer; 
     transition: transform 0.5s; 
@@ -82,10 +81,12 @@ article[data-state="flip"] h3 {
     }
     /* Especificidad: 002 */
     article h3 {
+        /*Se redefine el tamaño de la letra*/ 
         font-size: 1em;
     }
     /* Especificidad: 001 */
     p{
+        /*Se redefine el tamaño de la letra*/ 
         font-size: 1em;
     }
 }
@@ -93,15 +94,18 @@ article[data-state="flip"] h3 {
 @media (max-width: 400px) {
     /* Especificidad: 001 */
     article {
+        /*Se redefine la anchura y el ancho de las cartas*/ 
         width: 7vh;
         height: 7vh;
     }
     /* Especificidad: 002 */
     article h3{
+        /*Se redefine el tamaño de la letra*/ 
         font-size: 0.7em;
     }
     /* Especificidad: 001 */
     p{
+        /*Se redefine el tamaño de la letra*/ 
         font-size: 0.7em;
     }
 }
