@@ -41,21 +41,21 @@
     <p>Estás en: <a href="index.html">Inicio</a> >> Calendario</p>
 
     <main>
-    <h2>Calendario</h2>
+        <h2>Calendario</h2>
 
-    <button>Cargar Carreras</button>
-    <section>
-        <h3>Carreras</h3>
-    </section>
+        <button>Cargar Carreras</button>
+        <section>
+            <h3>Carreras</h3>
+        </section>
 
-    <script>
-        $(document).ready(function() {
-            var agenda = new Agenda();
-            $('button').click(function() {
-                agenda.obtenerCarreras();
+        <script>
+            $(document).ready(function() {
+                var agenda = new Agenda();
+                $('button').click(function() {
+                    agenda.obtenerCarreras();
+                });
             });
-        });
-    </script>
+        </script>
     </main>
 
 </body>

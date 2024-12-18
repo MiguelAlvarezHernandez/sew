@@ -93,41 +93,43 @@ class Moneda {
     </header>
 
     <p>Estás en: <a href="index.html">Inicio</a> >> Viajes</p>
+    <main>
     
-    <h2>Viajes</h2>
-    <article>
-        <h3>Carrusel</h3>
-        <?php
-        $carrusel = new Carrusel('Manama', 'Barhein'); // Reemplaza 'Madrid' y 'España' con los valores adecuados
-        $fotos = $carrusel->obtenerFotos();
-        if (empty($fotos)) {
-            echo "<p>No se encontraron fotos.</p>";
-        } else {
-            foreach ($fotos as $index => $foto) {
-                $src = "https://live.staticflickr.com/{$foto['server']}/{$foto['id']}_{$foto['secret']}.jpg";
-                //$activeClass = $index === 0 ? 'active' : '';
-                echo "<img src='{$src}' alt='Foto' >";
+        <h2>Viajes</h2>
+        <article>
+            <h3>Carrusel</h3>
+            <?php
+            $carrusel = new Carrusel('Manama', 'Barhein'); // Reemplaza 'Madrid' y 'España' con los valores adecuados
+            $fotos = $carrusel->obtenerFotos();
+            if (empty($fotos)) {
+                echo "<p>No se encontraron fotos.</p>";
+            } else {
+                foreach ($fotos as $index => $foto) {
+                    $src = "https://live.staticflickr.com/{$foto['server']}/{$foto['id']}_{$foto['secret']}.jpg";
+                    //$activeClass = $index === 0 ? 'active' : '';
+                    echo "<img src='{$src}' alt='Foto' >";
+                }
             }
-        }
+            ?>
+            
+            <button>&gt;</button>
+            <button>&lt;</button>
+        </article>
+        <?php
+            $moneda = new Moneda('EUR', 'BHD');
+            $cambio = $moneda->obtenerCambio();
+            echo "<p>1 EUR = {$cambio} BHD</p>";
         ?>
-        
-        <button>&gt;</button>
-        <button>&lt;</button>
-    </article>
-    <?php
-        $moneda = new Moneda('EUR', 'BHD');
-        $cambio = $moneda->obtenerCambio();
-        echo "<p>1 EUR = {$cambio} BHD</p>";
-    ?>
 
-   
-    <section>
-        <h3>Mapa estático</h3>
-    </section>
-    <section>
-        <h3>Mapa dinámico</h3>
-        <div></div>
-    </section>
+    
+        <section>
+            <h3>Mapa estático</h3>
+        </section>
+        <section>
+            <h3>Mapa dinámico</h3>
+            <div></div>
+        </section>
+    </main>
 
     <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBScz2OFH7IBs8aPAOufuoyYevvUm48SQU&callback=initMap"></script>
     <!-- <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBScz2OFH7IBs8aPAOufuoyYevvUm48SQU&callback=miViaje.initMap"></script>-->

@@ -106,14 +106,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <p>Estás en: <a href="index.html">Inicio</a> >> <a href="juegos.html">Juegos</a> >> Juego de Tiempo de Reacción</p>
 
     <main></main>
-    <?php if (isset($topRecords) && !empty($topRecords)): ?>
+    <?php
+        if (isset($topRecords) && !empty($topRecords)): 
+            // Generamos la etiqueta <section> dentro del bloque if
+            echo '<section>';
+        ?>
             <h3>Top 10 Récords para el Nivel <?php echo htmlspecialchars($nivel); ?></h3>
             <ol>
                 <?php foreach ($topRecords as $record): ?>
-                    <li><?php echo "\t" . htmlspecialchars($record['nombre']) . " " . htmlspecialchars($record['apellidos']) . " - " . htmlspecialchars($record['tiempo']) . " segundos"; ?></li>
+                    <li><?php echo htmlspecialchars($record['nombre']) . " " . htmlspecialchars($record['apellidos']) . " - " . htmlspecialchars($record['tiempo']) . " segundos"; ?></li>
                 <?php endforeach; ?>
             </ol>
-    <?php endif; ?>
+        <?php 
+            // Cerramos la etiqueta </section> dentro del bloque if
+            echo '</section>';
+        endif;
+    ?>
     
     
     <script src="js/semaforo.js"></script>

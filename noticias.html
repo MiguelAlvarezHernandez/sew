@@ -39,27 +39,29 @@
 
     <p>Estás en: <a href="index.html">Inicio</a> >> Noticias</p>
     
-    <h2>Noticias</h2>
+    <main>
+        <h2>Noticias</h2>
 
-    <label for="archivo">Subir archivo:</label>
-    <input type="file" id="archivo" />
-    <section>
-        <h3>Añadir noticia</h3>
-    </section>
-    <section>
-        <h3>Despliegue de noticias</h3>
-    </section>
+        <label for="archivo">Subir archivo:</label>
+        <input type="file" id="archivo" />
+        <section>
+            <h3>Añadir noticia</h3>
+        </section>
+        <section>
+            <h3>Despliegue de noticias</h3>
+        </section>
 
-    <script>
-        
-        const noticias = new Noticias();
-        noticias.crearFormulario();
+        <script>
+            
+            const noticias = new Noticias();
+            noticias.crearFormulario();
 
-        document.querySelector('input[type="file"]').addEventListener('change', function(event) {
-            const file = event.target.files[0];
-            noticias.readInputFile(file);
-        });
-    </script>
+            document.querySelector('input[type="file"]').addEventListener('change', function(event) {
+                const file = event.target.files[0];
+                noticias.readInputFile(file);
+            });
+        </script>
+    </main>
 
 
 

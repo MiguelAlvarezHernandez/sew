@@ -41,27 +41,31 @@
     
     <h2>Meteorología</h2>
 
-    <script>
-        
-        const pais = new País("Bahréin", "Manama", 1540000); 
+    <main>
 
-        
-        pais.inicializarRestoAtributos("Circuito Internacional de Bahréin", "Monarquía constitucional", "26.027, 50.537", "Islam");
+        <script>
+            
+            var pais = new País("Bahréin", "Manama", 1540000); 
 
-        
-        document.write(`<strong>Nombre del País:</strong> ${pais.obtenerNombre()}<br>`);
-        document.write(`<strong>Capital:</strong> ${pais.obtenerCapital()}<br>`);
-        document.write(`<h3>Información Secundaria:</h3>${pais.obtenerInfoSecundaria()}`);
-        document.write(`<strong>Coordenadas de la meta:</strong> ${pais.escribirCoordenadasMeta()}`); 
+            
+            pais.inicializarRestoAtributos("Circuito Internacional de Bahréin", "Monarquía constitucional", "26.027, 50.537", "Islam");
 
-        pais.obtenerPrevisionTiempo();
+            
+            document.write(`<strong>Nombre del País:</strong> ${pais.obtenerNombre()}<br>`);
+            document.write(`<strong>Capital:</strong> ${pais.obtenerCapital()}<br>`);
+            document.write(`<h3>Información Secundaria:</h3>${pais.obtenerInfoSecundaria()}`);
+            document.write(`<strong>Coordenadas de la meta:</strong> ${pais.escribirCoordenadasMeta()}`); 
 
-    </script>
+            pais.obtenerPrevisionTiempo();
 
-    <!-- <section id="prevision"></section> -->
-    <section>
-        <h3>Previsión meteorológica</h3>
-    </section>
+        </script>
+
+        <!-- <section id="prevision"></section> -->
+        <section>
+            <h3>Previsión meteorológica</h3>
+        </section>
+
+    </main>
 
     
 
