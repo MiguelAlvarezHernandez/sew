@@ -152,12 +152,13 @@ class Database {
 <head>
     <title>F1 Data</title>
     <meta name="author" content="Tu Nombre">
-    <meta name="description" content="" />
+    <meta name="description" content="documento para el manejo de datos de formula 1" />
+    <meta name ="keywords" content ="F1" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
     <link rel="stylesheet" type="text/css" href="../estilo/estilo.css" />
     <link rel="stylesheet" href="../estilo/layout.css">
-    <link rel="icon" href="multimedia/imagenes/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../multimedia/imagenes/favicon.ico" type="image/x-icon">
 
 </head>
 <body>
