@@ -53,18 +53,18 @@ $resultado = "";
 $formularioPOST = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-$formularioPOST = $_POST;
+    //$formularioPOST = $_POST;
 
-$nombre = $_POST['nombre'];
-$apellidos = $_POST['apellidos'];
-$nivel = $_POST['nivel'];
-$tiempo = $_POST['tiempo'];
+    $nombre = $_POST['nombre'];
+    $apellidos = $_POST['apellidos'];
+    $nivel = $_POST['nivel'];
+    $tiempo = $_POST['tiempo'];
 
-$record = new Record();
-$record->saveRecord($nombre, $apellidos, $nivel, $tiempo);
+    $record = new Record();
+    $record->saveRecord($nombre, $apellidos, $nivel, $tiempo);
 
-$topRecords = $record->getTopRecords($nivel);
-$record->closeDB();
+    $topRecords = $record->getTopRecords($nivel);
+    $record->closeDB();
 }
 
 ?>
@@ -74,8 +74,9 @@ $record->closeDB();
 <head>
     <meta charset="UTF-8" />
     <title>Juego de Tiempo de Reacción</title>
-    <meta name="author" content="Tu Nombre">
-    <meta name="description" content="Juego de tiempo de reacción del proyecto F1 Desktop." />
+    <meta name="author" content="Miguel Álvarez">
+    <meta name="description" content="Juego de tiempo de reacción del proyecto F1 Desktop" />
+    <meta name ="keywords" content ="F1" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
     <link rel="stylesheet" href="estilo/estilo.css" />

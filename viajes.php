@@ -61,10 +61,8 @@ class Moneda {
 
 
     <meta name ="author" content = "Miguel Álvarez">
-    <meta name="description" content="aqui cada documento debe tener la descripción 
-    del contenido del mismo" /> 
-    <meta name ="keywords" content ="aquí cada documento debe tener la lista
-    de las palabras clave del mismo separadas por comas" />
+    <meta name="description" content="documento para mostrar fotos y mapas del circuito" /> 
+    <meta name ="keywords" content ="F1" />
     <meta name ="viewport" content ="width=device-width, initial-scale=1.0" />
 
     <link rel="stylesheet" type="text/css" href="estilo/estilo.css" />
@@ -134,7 +132,6 @@ class Moneda {
     <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBScz2OFH7IBs8aPAOufuoyYevvUm48SQU&callback=initMap"></script>
     <!-- <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBScz2OFH7IBs8aPAOufuoyYevvUm48SQU&callback=miViaje.initMap"></script>-->
     <script src="js/viajes.js"></script>
-    <p>en desarrollo </p>
 
 </body>
 </html>
