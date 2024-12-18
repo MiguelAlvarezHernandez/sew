@@ -18,9 +18,9 @@ class Database {
     public function createDatabase() {
         $sql = "CREATE DATABASE IF NOT EXISTS " . $this->dbname;
         if ($this->conn->query($sql) === TRUE) {
-            echo "Base de datos creada correctamente<br>";
+            echo "<p>Base de datos creada correctamente</p>";
         } else {
-            echo "Error creando la base de datos: " . $this->conn->error . "<br>";
+            echo "<p>Error creando la base de datos: " . $this->conn->error . "</p>";
         }
         $this->conn->select_db($this->dbname);
     }
@@ -69,11 +69,11 @@ class Database {
             )"
         ];
 
-        foreach ($tables as $table) {
-            if ($this->conn->query($table) === TRUE) {
-                echo "Tabla creada correctamente<br>";
+        foreach ($tables as $sql) {
+            if ($this->conn->query($sql) === TRUE) {
+                echo "<p>Tabla creada correctamente</p>";
             } else {
-                echo "Error creando la tabla: " . $this->conn->error . "<br>";
+                echo "<p>Error creando la tabla: " . $this->conn->error . "</p>";
             }
         }
     }
@@ -83,9 +83,9 @@ class Database {
         foreach ($tables as $table) {
             $sql = "DELETE FROM $table";
             if ($this->conn->query($sql) === TRUE) {
-                echo "Datos de la tabla $table eliminados correctamente<br>";
+                echo "<p>Datos de la tabla $table eliminados correctamente</p>";
             } else {
-                echo "Error eliminando datos de la tabla $table: " . $this->conn->error . "<br>";
+                echo "<p>Error eliminando datos de la tabla $table: " . $this->conn->error . "</p>";
             }
         }
     }
@@ -102,7 +102,7 @@ class Database {
                 }
                 $sql = rtrim($sql, ',') . ")";
                 if ($this->conn->query($sql) !== TRUE) {
-                    echo "Error insertando datos en $table: " . $this->conn->error . "<br>";
+                    echo "<p>Error insertando datos en $table: " . $this->conn->error . "</p>";
                 }
             }
             fclose($gestor);
@@ -134,11 +134,11 @@ class Database {
             $fp = fopen('mejores_resultados.csv', 'w');
             while ($row = $result->fetch_assoc()) {
                 fputcsv($fp, $row);
-                echo "CarreraID: " . $row["CarreraID"] . " - Posición: " . $row["Posición"] . " - Puntos: " . $row["Puntos"] . "<br>";
+                echo "<p>CarreraID: " . $row["CarreraID"] . " - Posición: " . $row["Posición"] . " - Puntos: " . $row["Puntos"] . "</p>";
             }
             fclose($fp);
         } else {
-            echo "No se encontraron resultados para el piloto con nombre $nombrePiloto<br>";
+            echo "<p>No se encontraron resultados para el piloto con nombre $nombrePiloto</p>";
         }
     }
 
@@ -176,7 +176,7 @@ class Database {
         </nav>
     </header>
 
-    <p>Estás en: <a href="index.html">Inicio</a> >> <a href="juegos.html">Juegos</a> >> F1 Data</p>
+    <p>Estás en: <a href="../index.html">Inicio</a> >> <a href="../juegos.html">Juegos</a> >> F1 Data</p>
     <main>
         <h2>Aplicación de Fórmula 1</h2>
         <ul>
@@ -186,8 +186,8 @@ class Database {
         </ul>
         <?php if (isset($_GET['action']) && $_GET['action'] == 'importar'): ?>
             <form action="?action=procesar_importar" method="post" enctype="multipart/form-data">
-                <label for="table">Selecciona la tabla:</label>
-                <select name="table" id="table">
+                <label for="table1">Selecciona la tabla:</label>
+                <select name="table1" id="table1">
                     <option value="Equipos">Equipos</option>
                     <option value="Circuitos">Circuitos</option>
                     <option value="Pilotos">Pilotos</option>
@@ -203,8 +203,8 @@ class Database {
         <?php endif; ?>
         <?php if (isset($_GET['action']) && $_GET['action'] == 'exportar'): ?>
             <form action="?action=procesar_exportar" method="post">
-                <label for="table">Selecciona la tabla:</label>
-                <select name="table" id="table">
+                <label for="table2">Selecciona la tabla:</label>
+                <select name="table2" id="table2">
                     <option value="Equipos">Equipos</option>
                     <option value="Circuitos">Circuitos</option>
                     <option value="Pilotos">Pilotos</option>
@@ -217,7 +217,6 @@ class Database {
                 <input type="text" name="nombrePiloto" id="nombrePiloto">
                 <br><br>
                 <input type="submit" value="Exportar CSV">
-            </form>
             </form>
         <?php endif; ?>
 
@@ -245,16 +244,16 @@ if (isset($_GET['action'])) {
             $db->clearTables();
             break;
         case 'procesar_importar':
-            if (isset($_POST['table']) && isset($_FILES['file'])) {
-                $table = $_POST['table'];
+            if (isset($_POST['table1']) && isset($_FILES['file'])) {
+                $table = $_POST['table1'];
                 $file = $_FILES['file']['tmp_name'];
                 $db->selectDatabase();
                 $db->importCSV($table, $file);
             }
             break;
         case 'procesar_exportar':
-            if (isset($_POST['table'])) {
-                $table = $_POST['table'];
+            if (isset($_POST['table2'])) {
+                $table = $_POST['table2'];
                 $db->selectDatabase();
                 if ($table == 'mejores_resultados') {
                     if (isset($_POST['nombrePiloto'])) {
