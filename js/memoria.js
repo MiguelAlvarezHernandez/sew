@@ -39,7 +39,7 @@ class Memoria {
 
     shuffleElements() {
         for (let i = this.elements.length - 1; i > 0; i--) {
-            const j = Math.floor(Math.random() * (i + 1));
+            var j = Math.floor(Math.random() * (i + 1));
             [this.elements[i], this.elements[j]] = [this.elements[j], this.elements[i]]; 
         }
     }
@@ -61,7 +61,7 @@ class Memoria {
     }
 
     checkForMatch() {
-        const isMatch = this.firstCard.dataset.element === this.secondCard.dataset.element;
+        var isMatch = this.firstCard.dataset.element === this.secondCard.dataset.element;
         isMatch ? this.disableCards() : this.unflipCards(); 
     }
 
@@ -72,18 +72,18 @@ class Memoria {
     }
 
     createElements() {
-        const gameBoard = document.querySelector('section');
+        var gameBoard = document.querySelector('section');
 
         this.elements.forEach(card => {
-            const cardElement = document.createElement("article");
+            var cardElement = document.createElement("article");
             //cardElement.classList.add("card");
             cardElement.dataset.element = card.element;
             cardElement.dataset.state = "unflip";
 
-            const cardTitle = document.createElement("h3");
+            var cardTitle = document.createElement("h3");
             cardTitle.textContent = "Tarjeta de memoria";
 
-            const cardImage = document.createElement("img");
+            var cardImage = document.createElement("img");
             cardImage.src = card.source;
             cardImage.alt = card.element;
             //cardImage.classList.add("hidden");
@@ -115,7 +115,7 @@ class Memoria {
     }
 
     addEventListeners() {
-        const cards = document.querySelectorAll('article');
+        var cards = document.querySelectorAll('article');
     
         cards.forEach(card => {
             card.addEventListener("click", () => this.flipCard(card,this));
@@ -124,8 +124,8 @@ class Memoria {
 
 
     addHelpButton() {
-        const helpButton = document.querySelector("button");
-        const helpText = document.querySelector("button + p");
+        var helpButton = document.querySelector("button");
+        var helpText = document.querySelector("button + p");
 
         helpButton.addEventListener("click", () => {
             if (helpText.hidden) {
@@ -138,6 +138,5 @@ class Memoria {
     }
     
 }
-
 
 

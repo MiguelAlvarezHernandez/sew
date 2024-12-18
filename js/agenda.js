@@ -8,14 +8,14 @@ class Agenda {
             url: this.apiUrl,
             method: 'GET',
             success: (datos) => {
-                const carreras = datos.MRData.RaceTable.Races;
+                var carreras = datos.MRData.RaceTable.Races;
                 let html = '';
 
                 carreras.forEach((carrera) => {
-                    const nombreCarrera = carrera.raceName;
-                    const nombreCircuito = carrera.Circuit.circuitName;
-                    const coordenadas = `${carrera.Circuit.Location.lat}, ${carrera.Circuit.Location.long}`;
-                    const fechaHora = `${carrera.date} ${carrera.time}`;
+                    var nombreCarrera = carrera.raceName;
+                    var nombreCircuito = carrera.Circuit.circuitName;
+                    var coordenadas = `${carrera.Circuit.Location.lat}, ${carrera.Circuit.Location.long}`;
+                    var fechaHora = `${carrera.date} ${carrera.time}`;
 
                     html += `
                         <article>

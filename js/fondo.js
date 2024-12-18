@@ -5,10 +5,10 @@ class Fondo{
         this.circuito = circuito;
     }
     obtenerImagenCircuito() {
-        const apiKey = 'e087c01a85e25f380d54a26bf2a00148'; 
-        const piloto = "Lance Stroll";
-        const tags = `${this.circuito},${piloto}`;
-        const url = `https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&tags=${tags}&format=json&nojsoncallback=1`;
+        var apiKey = 'e087c01a85e25f380d54a26bf2a00148'; 
+        var piloto = "Lance Stroll";
+        var tags = `${this.circuito},${piloto}`;
+        var url = `https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&tags=${tags}&format=json&nojsoncallback=1`;
 
         $.ajax({
             url: url,
@@ -32,5 +32,5 @@ class Fondo{
     }
 }
 
-const fondoEjemplo = new Fondo('Barhain', 'Sahkir', 'Bahrain International Circuit');
+var fondoEjemplo = new Fondo('Barhain', 'Sahkir', 'Bahrain International Circuit');
 fondoEjemplo.obtenerImagenCircuito();

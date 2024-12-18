@@ -52,7 +52,10 @@ class VideoPlayer {
     addVideoToPlaylist(url) {
         var videoItem = document.createElement('article');
         videoItem.draggable = true;
-        videoItem.innerHTML = `<video src="${url}" controls></video>`;
+        videoItem.innerHTML = `
+            <h3>Playlist Video</h3>
+            <video src="${url}" controls></video>
+            `;
         this.playlist.appendChild(videoItem);
     }
 
@@ -65,6 +68,6 @@ class VideoPlayer {
 
 // Inicialización de la clase VideoPlayer
 $(document).ready(function() {
-    const videoPlayer = new VideoPlayer();
+    var videoPlayer = new VideoPlayer();
     videoPlayer.initialize();
 });

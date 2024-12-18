@@ -1,6 +1,6 @@
 class FileProcessor {
     constructor() {
-        this.areaVisualizacion = document.querySelector('pre');
+        this.areaVisualizacion = document.querySelectorAll('section')[2];
         this.errorArchivo = document.createElement('p');
         document.body.appendChild(this.errorArchivo);
     }
@@ -21,7 +21,15 @@ class FileProcessor {
         var reader = new FileReader();
         reader.onload = (evento) => {
             var xmlContent = evento.target.result;
-            this.areaVisualizacion.textContent = this.formatXml(xmlContent);
+    
+            var parser = new DOMParser();
+            var xmlDoc = parser.parseFromString(xmlContent, "application/xml");
+    
+            // Llamar a parseXMLToHTML para convertir el XML a HTML
+            var htmlOutput = this.parseXMLToHTML(xmlDoc);
+    
+            // Mostrar el HTML generado en el área de visualización
+            this.areaVisualizacion.innerHTML += htmlOutput;
         };
         reader.readAsText(archivo);
     }
@@ -44,36 +52,51 @@ class FileProcessor {
         reader.readAsText(archivo);
     }
 
-    formatXml(xml) {
-        var formatted = '';
-        var reg = /(>)(<)(\/*)/g;
-        xml = xml.replace(reg, '$1\r\n$2$3');
-        var pad = 0;
-        jQuery.each(xml.split('\r\n'), function(index, node) {
-            var indent = 0;
-            if (node.match(/.+<\/\w[^>]*>$/)) {
-                indent = 0;
-            } else if (node.match(/^<\/\w/)) {
-                if (pad != 0) {
-                    pad -= 1;
-                }
-            } else if (node.match(/^<\w[^>]*[^\/]>.*$/)) {
-                indent = 1;
-            } else {
-                indent = 0;
-            }
-
-            var padding = '';
-            for (var i = 0; i < pad; i++) {
-                padding += '  ';
-            }
-
-            formatted += padding + node + '\r\n';
-            pad += indent;
-        });
-
-        return formatted;
+    parseXMLToHTML(xmlDoc) {
+        var root = xmlDoc.documentElement; 
+        let html = "<ul>"; 
+        html += this.traverseNodes(root); 
+        html += "</ul>";
+        return html;
     }
+    
+    traverseNodes(node) {
+        let html = ""; 
+    
+        if (node.nodeType === 1) { 
+            html += `<li><strong>${node.nodeName}</strong>`;
+    
+            if (node.attributes.length > 0) {
+                html += " (";
+                for (let i = 0; i < node.attributes.length; i++) {
+                    var attr = node.attributes[i];
+                    html += `${attr.name} = "${attr.value}"`;
+                    if (i < node.attributes.length - 1) {
+                        html += ", ";
+                    }
+                }
+                html += ")";
+            }
+    
+            if (node.childNodes.length > 0) {
+                html += "<ul>"; 
+                node.childNodes.forEach((childNode) => {
+                    html += this.traverseNodes(childNode); 
+                });
+                html += "</ul>"; 
+            }
+    
+            html += "</li>";
+        } else if (node.nodeType === 3) { 
+            var textContent = node.textContent.trim();
+            if (textContent) {
+                html += `<li>${textContent}</li>`; 
+            }
+        }
+    
+        return html; 
+    }
+    
 
     showMapWithKML(kmlContent) {
         var parser = new DOMParser();
@@ -124,7 +147,7 @@ class FileProcessor {
 
 // Uso de la clase
 $(document).ready(function() {
-    const fileProcessor = new FileProcessor();
+    var fileProcessor = new FileProcessor();
 
     $('input').on('change', function(event) {
         var archivo = event.target.files[0];

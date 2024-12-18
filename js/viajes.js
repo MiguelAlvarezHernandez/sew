@@ -1,16 +1,12 @@
 "use strict";
 
-const slides = document.querySelectorAll('article img');
-const nextSlide = document.querySelectorAll('article button')[0];
+var slides = document.querySelectorAll('article img');
+var nextSlide = document.querySelectorAll('article button')[0];
 
-// current slide counter
 let curSlide = 0;
-// maximum number of slides
 let maxSlide = slides.length - 1;
 
-// add event listener and navigation functionality
 nextSlide.addEventListener("click", function () {
-  // check if current slide is the last and reset current slide
   if (curSlide === maxSlide) {
     curSlide = 0;
   } else {
@@ -24,19 +20,15 @@ nextSlide.addEventListener("click", function () {
   });
 });
 
-// select previous slide button
-const prevSlide = document.querySelectorAll('article button')[1];
+var prevSlide = document.querySelectorAll('article button')[1];
 
-// add event listener and navigation functionality
 prevSlide.addEventListener("click", function () {
-  // check if current slide is the first and reset current slide to last
   if (curSlide === 0) {
     curSlide = maxSlide;
   } else {
     curSlide--;
   }
 
-  // move slide by 100%
   slides.forEach((slide, indx) => {
     var trans = 100 * (indx - curSlide);
     $(slide).css('transform', 'translateX(' + trans + '%)');
@@ -147,7 +139,6 @@ class Viajes {
                 this.handleLocationError.bind(this, true)
             );
         } else {
-            // Browser doesn't support Geolocation
             this.handleLocationError(false);
         }
     }
