@@ -1,3 +1,4 @@
+/* datos personales Miguel Álvare Hernández UO295368*/
 /* Especificidad: 001 */
 main {
     width: 60%;
@@ -18,12 +19,12 @@ h2 {
 }
 
 /* Especificidad: 001 */
-section {
+/*section {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 10px;
     grid-column: span 4;
-}
+}*/
 
 @keyframes encenderLuz {
     from {
