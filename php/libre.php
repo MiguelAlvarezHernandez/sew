@@ -151,7 +151,7 @@ class Database {
 <html lang="es">
 <head>
     <title>F1 Data</title>
-    <meta name="author" content="Tu Nombre">
+    <meta name="author" content="Miguel Álvarez Hernández">
     <meta name="description" content="documento para el manejo de datos de formula 1" />
     <meta name ="keywords" content ="F1" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -163,8 +163,8 @@ class Database {
 </head>
 <body>
     <header>
-    <h1><a href="index.html" title="Volver a Inicio">F1 Desktop</a></h1>
-    <nav>
+        <h1><a href="index.html" title="Volver a Inicio">F1 Desktop</a></h1>
+        <nav>
             <a href="../index.html" title="Inicio">Inicio</a>
             <a href="../piloto.html" title="Piloto">Piloto</a>
             <a href="../noticias.html" title="Noticias">Noticias</a>
