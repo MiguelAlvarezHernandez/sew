@@ -11,34 +11,27 @@ class Semaforo {
         this.difficulty = this.levels[Math.floor(Math.random() * this.levels.length)];
     
         this.createStructure();
-        //this.init();
     }
 
     createStructure() {
         var main = document.querySelector('main');
 
-        // Crear y añadir el título del juego
         var title = document.createElement('h2');
         title.textContent = 'Semáforo';
         main.appendChild(title);
 
-        // Crear y añadir las luces del semáforo
-        //const trafficLight = document.createElement('section');
+
         for (let i = 0; i < this.lights; i++) {
             var light = document.createElement('div');
-            //light.className = 'light';
             main.appendChild(light);
         }
-        //main.appendChild(trafficLight);
 
         var startButton = document.createElement('button');
-        //startButton.id = 'startButton';
         startButton.textContent = 'Arranque';
         startButton.onclick = () => this.initSequence();
         main.appendChild(startButton);
 
         var reactionButton = document.createElement('button');
-        //reactionButton.id = 'reactionButton';
         reactionButton.textContent = 'Reacción';
         reactionButton.disabled = true;
         reactionButton.onclick = () => this.stopReaction();
@@ -73,9 +66,10 @@ class Semaforo {
 
         reactionTime = (reactionTime / 1000).toFixed(3);
 
+        var main = document.querySelector('main');
         var reactionDisplay = document.createElement('p');
         reactionDisplay.textContent = `Tu tiempo de reacción es: ${reactionTime} segundos`;
-        document.body.appendChild(reactionDisplay);
+        main.insertAdjacentElement('afterend', reactionDisplay);
 
         var mainElement = document.querySelector('main');
         mainElement.classList.remove('load', 'unload');
@@ -116,6 +110,4 @@ class Semaforo {
     }
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-    new Semaforo();
-});
+var semaforo = new Semaforo();

@@ -41,8 +41,6 @@ class Viajes {
         this.infoWindow = null;
         this.latitud = null;
         this.longitud = null;
-        //navigator.geolocation.getCurrentPosition(this.getPosicion.bind(this));
-        //this.getPosicion.bind(this),
         this.verErrores.bind(this);
 
     }
@@ -90,19 +88,6 @@ class Viajes {
     getAltitud() {
         return this.altitud;
     }
-
-    /*verTodo(dondeVerlo) {
-        var ubicacion = document.getElementById(dondeVerlo);
-        var datos = '';
-        datos += '<p>Longitud: ' + this.longitud + ' grados</p>';
-        datos += '<p>Latitud: ' + this.latitud + ' grados</p>';
-        datos += '<p>Precisión de la latitud y longitud: ' + this.precision + ' metros</p>';
-        datos += '<p>Altitud: ' + this.altitud + ' metros</p>';
-        datos += '<p>Precisión de la altitud: ' + this.precisionAltitud + ' metros</p>';
-        datos += '<p>Rumbo: ' + this.rumbo + ' grados</p>';
-        datos += '<p>Velocidad: ' + this.velocidad + ' metros/segundo</p>';
-        ubicacion.innerHTML = datos;
-    }*/
 
 
     getMapaEstaticoGoogle() {

@@ -1,20 +1,3 @@
-/*$(document).ready(function() {
-
-    // Manejo de subtítulos con API TextTrack
-    /*var videoPlayer = $('video')[0];
-    var track = videoPlayer.textTracks[0];
-
-    track.mode = 'hidden'; // Ocultar subtítulos por defecto
-
-    videoPlayer.addEventListener('play', function() {
-        track.mode = 'showing'; // Mostrar subtítulos cuando se reproduce el video
-    });
-
-    videoPlayer.addEventListener('pause', function() {
-        track.mode = 'hidden'; // Ocultar subtítulos cuando se pausa el video
-    });
-});*/
-
 class VideoPlayer {
     constructor() {
         this.videoPlayer = $('video')[0];

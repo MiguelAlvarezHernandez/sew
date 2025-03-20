@@ -29,7 +29,6 @@ class Agenda {
                     `;
                 });
 
-                //$('section').html(html);
                 $('section').append(html);
             },
             error: () => {

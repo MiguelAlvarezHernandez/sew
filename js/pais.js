@@ -55,17 +55,15 @@ class País {
             dataType: 'xml',
             success: function(data) {
                 var $data = $(data);
-                // const $prevision = $('#pervision');
                 var $prevision = $('section');
-                //$prevision.empty(); // Limpiar contenido anterior
 
                 var diasMostrados = new Set();
 
                     $data.find('time').each(function(index, element) {
                         var $element = $(element);
                         var dateTime = $element.attr('from');
-                        var time = dateTime.split('T')[1].split(':')[0]; // Obtener la hora
-                        var date = dateTime.split('T')[0]; // Obtener la fecha
+                        var time = dateTime.split('T')[1].split(':')[0]; 
+                        var date = dateTime.split('T')[0]; 
                         
 
                         if (time === '12' && !diasMostrados.has(date)) {

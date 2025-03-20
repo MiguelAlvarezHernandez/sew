@@ -25,10 +25,8 @@ class FileProcessor {
             var parser = new DOMParser();
             var xmlDoc = parser.parseFromString(xmlContent, "application/xml");
     
-            // Llamar a parseXMLToHTML para convertir el XML a HTML
             var htmlOutput = this.parseXMLToHTML(xmlDoc);
     
-            // Mostrar el HTML generado en el área de visualización
             this.areaVisualizacion.innerHTML += htmlOutput;
         };
         reader.readAsText(archivo);
@@ -47,7 +45,17 @@ class FileProcessor {
         var reader = new FileReader();
         reader.onload = (evento) => {
             var svgContent = evento.target.result;
-            document.querySelectorAll('section')[0].innerHTML += svgContent;
+            
+            var existingImg = document.querySelector('section img');
+            if (existingImg) {
+                existingImg.remove();
+            }
+
+            var imgElement = document.createElement("img");
+            imgElement.src = URL.createObjectURL(new Blob([svgContent], {type: 'image/svg+xml'})); 
+            imgElement.alt = "Imagen svg";
+    
+            document.querySelectorAll('section')[0].appendChild(imgElement);
         };
         reader.readAsText(archivo);
     }

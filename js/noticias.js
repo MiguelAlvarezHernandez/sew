@@ -19,7 +19,6 @@ class Noticias {
     procesarContenido(contenido) {
         var lineas = contenido.split('\n');
         var contenedorNoticias = document.querySelectorAll('section')[1];
-        //contenedorNoticias.setAttribute('data-contenedor-noticias', '');
 
         lineas.forEach(linea => {
             var [titular, entradilla, autor] = linea.split('_');
@@ -30,10 +29,8 @@ class Noticias {
             tituloElemento.textContent = titular;
             header.appendChild(tituloElemento);
 
-            //var section = document.createElement('section');
             var entradillaElemento = document.createElement('p');
             entradillaElemento.textContent = entradilla;
-            //section.appendChild(entradillaElemento);
 
             var footer = document.createElement('footer');
             var autorElemento = document.createElement('p');
@@ -42,7 +39,6 @@ class Noticias {
 
             noticia.appendChild(header);
             noticia.appendChild(entradillaElemento);
-            //noticia.appendChild(section);
             noticia.appendChild(footer);
             contenedorNoticias.appendChild(noticia);
         });
@@ -62,10 +58,8 @@ class Noticias {
         tituloElemento.textContent = titular;
         header.appendChild(tituloElemento);
 
-        //var section = document.createElement('section');
         var entradillaElemento = document.createElement('p');
         entradillaElemento.textContent = entradilla;
-        //section.appendChild(entradillaElemento);
 
         var footer = document.createElement('footer');
         var autorElemento = document.createElement('p');

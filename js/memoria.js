@@ -76,7 +76,6 @@ class Memoria {
 
         this.elements.forEach(card => {
             var cardElement = document.createElement("article");
-            //cardElement.classList.add("card");
             cardElement.dataset.element = card.element;
             cardElement.dataset.state = "unflip";
 
@@ -86,13 +85,11 @@ class Memoria {
             var cardImage = document.createElement("img");
             cardImage.src = card.source;
             cardImage.alt = card.element;
-            //cardImage.classList.add("hidden");
 
             cardElement.appendChild(cardTitle);
             cardElement.appendChild(cardImage);
             gameBoard.appendChild(cardElement);
 
-            //cardElement.addEventListener("click", () => this.flipCard(cardElement,this));
         });
     }
 
@@ -122,21 +119,23 @@ class Memoria {
         });
     }
 
-
     addHelpButton() {
         var helpButton = document.querySelector("button");
-        var helpText = document.querySelector("button + p");
+        var section = document.querySelector("section");
+        var article = section.querySelector("article"); 
 
         helpButton.addEventListener("click", () => {
-            if (helpText.hidden) {
-                helpText.textContent = "Haz clic en las cartas para voltearlas y encuentra las coincidencias. Cuando encuentres todas las parejas se acabará el juego";
-                helpText.hidden = false;
+            var helpText = document.querySelector("button + p");
+            if (helpText ) {
+                helpText.remove();
             } else {
-                helpText.hidden = true;
+                helpText = document.createElement("p");
+                helpText.textContent = "Haz clic en las cartas para voltearlas y encuentra las coincidencias. Cuando encuentres todas las parejas se acabará el juego";
+                section.insertBefore(helpText, article);
             }
         });
     }
     
 }
 
-
+var memoria = new Memoria();
