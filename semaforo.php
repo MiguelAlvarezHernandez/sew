@@ -77,7 +77,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
     <meta charset="UTF-8" />
     <title>Juego de Tiempo de Reacción</title>
-    <meta name="author" content="Miguel Álvarez">
+    <meta name="author" content="Miguel Álvarez Hernández">
     <meta name="description" content="Juego de tiempo de reacción del proyecto F1 Desktop" />
     <meta name ="keywords" content ="F1" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />

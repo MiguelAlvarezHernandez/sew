@@ -60,7 +60,7 @@ class Moneda {
     <title>Viajes</title>
 
 
-    <meta name ="author" content = "Miguel Álvarez">
+    <meta name ="author" content = "Miguel Álvarez Hernández">
     <meta name="description" content="documento para mostrar fotos y mapas del circuito" /> 
     <meta name ="keywords" content ="F1" />
     <meta name ="viewport" content ="width=device-width, initial-scale=1.0" />
@@ -79,8 +79,8 @@ class Moneda {
 <body>
     <!-- Datos con el contenidos que aparece en el navegador -->
     <header>
-    <h1><a href="index.html" title="Volver a Inicio">F1 Desktop</a></h1>
-    <nav>
+        <h1><a href="index.html" title="Volver a Inicio">F1 Desktop</a></h1>
+        <nav>
             <a href="index.html" title="Inicio">Inicio</a>
             <a href="piloto.html" title="Piloto">Piloto</a>
             <a href="noticias.html" title="Noticias">Noticias</a>
